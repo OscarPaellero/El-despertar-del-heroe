@@ -1,6 +1,4 @@
 import java.util.Scanner;
-import java.util.Random;
-
 
 public class juego
 {
@@ -91,9 +89,10 @@ public static void main(String[] args)
                     }
 
                     if (villanoDerrotado) {
-                        System.out.println("\nHas superado las rondas nacionales...");
+                        System.out.println("Has superado las rondas nacionales...");
                     } else {
-                        System.out.println("\nGAME OVER. Fin del juego.");
+                        System.out.println("GAME OVER. Fin del juego.");
+                        System.out.println("===/====/===/===/===/===/===/===/====/===/===/===/===/===/");
                         opcion = 4;
                     }
                 break;

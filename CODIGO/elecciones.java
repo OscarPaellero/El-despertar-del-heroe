@@ -6,7 +6,7 @@ public class elecciones
 // ---------------- RONDA INICIAL ----------------
     public static boolean rondaInicial(Scanner sc, jugador jugadorTOP)
     {
-        estadio estd0 = new estadio("Mestalla", personaje.villanoLim, personaje.heroeVilla, "Valencia CF", null);
+        estadio estd0 = new estadio("Mestalla", personaje.villanoLim, personaje.heroeVilla, "Valencia CF");
  
         System.out.println("===== RONDA INICIAL =====");
         estd0.presentar();
@@ -22,9 +22,9 @@ public class elecciones
 // ---------------- RONDA 1 ----------------
     public static boolean ronda1(Scanner sc, jugador jugadorTOP)
     {
-        estadio estd1 = new estadio("La Ceramica", personaje.villanoRoig, personaje.heroeSenna, "Villarreal CF", null);
-        estadio estd2 = new estadio("RCDE Stadium", personaje.villanoJoselu, personaje.heroeJarque, "RCD Espanyol", null);
-        estadio estd3= new estadio("Estadio de Vallecas", personaje.villanoPresa, personaje.heroePalazon, "Rayo Vallecano", null);
+        estadio estd1 = new estadio("La Ceramica", personaje.villanoRoig, personaje.heroeSenna, "Villarreal CF");
+        estadio estd2 = new estadio("RCDE Stadium", personaje.villanoJoselu, personaje.heroeJarque, "RCD Espanyol");
+        estadio estd3= new estadio("Estadio de Vallecas", personaje.villanoPresa, personaje.heroePalazon, "Rayo Vallecano");
  
         estadio elegido = null;
  
@@ -55,6 +55,7 @@ public class elecciones
                     break;
             }
         }
+
  
         elegido.presentar();
         System.out.println("Pulsa ENTER para luchar...");
