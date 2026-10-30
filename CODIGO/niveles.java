@@ -1,4 +1,4 @@
-public class niveles 
+public class niveles extends juego
 {
     
 }

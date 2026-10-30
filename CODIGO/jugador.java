@@ -1,4 +1,4 @@
-public class jugador
+public class jugador extends juego
 {
     private String nombre;
     private int vida;
@@ -29,8 +29,13 @@ public class jugador
 
     public void mostrarEstado()
     {
+        System.out.println(" ");
+        System.out.println("================================================================");
         System.out.println("Jugador: " + nombre);
         System.out.println("Vida: " + vida);
         System.out.println("Arma: " + this.armaActual.getNombre() + " (daño: " + this.armaActual.getDaño() + " )");
+        System.out.println("================================================================");
+        System.out.println(" ");
+
     }
 }

@@ -1,4 +1,4 @@
-
-public class ranking {
+public class ranking extends juego
+{
     
 }

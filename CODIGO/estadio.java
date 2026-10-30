@@ -1,13 +1,13 @@
-public class estadio
+public class estadio extends juego
 {
     private String nombreEstadio;
-    private String villano;
-    private String heroe;
+    private personaje villano;
+    private personaje heroe;
     private String nombreClub;
     private String arma;
     private String poder;
 
-    public estadio(String estadio, String villano, String heroe, String club, String arma, String poder)
+    public estadio(String estadio, personaje villano, personaje heroe, String club, String arma)
     {
         this.nombreEstadio = estadio;
         this.villano = villano;
@@ -22,11 +22,11 @@ public class estadio
         return this.nombreEstadio;
     }
 
-    public String getVillano() {
+    public personaje getVillano() {
         return this.villano;
     }
 
-    public String getHeroe() {
+    public personaje getHeroe() {
         return this.heroe;
     }
 

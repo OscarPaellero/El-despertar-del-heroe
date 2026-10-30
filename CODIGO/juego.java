@@ -2,8 +2,10 @@ import java.util.Scanner;
 import java.util.Random;
 
 
-public class juego 
+public class juego
 {
+
+
 public static void main(String[] args) 
 {
     Scanner sc = new Scanner(System.in);
@@ -18,8 +20,8 @@ public static void main(String[] args)
         System.out.println(" ");
         System.out.println(" ");
         System.out.println("Estas a punto de adentrarte en un mundo lleno de increibles famosos, mas concretamente de futbolistas,");
-        System.out.println("A si que si no sabes ni quien es Isi PAlazon, porfavor, salte de aqui, gracias :) ");
-        System.out.println("Pero antes de todo estaria bien saber de el por que te vas pelear contra gente del mudno dle futbol ¿no?");
+        System.out.println("A si que si no sabes ni quien es Isi Palazon, porfavor, salte de aqui, gracias :) ");
+        System.out.println("Pero antes de todo estaria bien saber por que te vas pelear contra gente del mundo del futbol ¿no?");
         System.out.println("");
 
 
@@ -29,8 +31,8 @@ public static void main(String[] args)
         
         
         System.out.println("");
-        System.out.println("Paar ello nos remonatmos al 28 de julio de 2026.");
-        System.out.println("Los diarios The Times y Financial Times desatan un terremoto mundial al revelar el proyecto secreto de Gianni Infantino: ");
+        System.out.println("Para ello nos remonatmos al 28 de julio de 2026.");
+        System.out.println("Los diarios The Times y Financial Times desatan una exclusiva mundial al revelar el proyecto secreto de Gianni Infantino: ");
         System.out.println("Vender el 20% de los derechos del Mundial a inversores privados estadounidenses por 4.200 millones de dólares.");
         System.out.println("");
         System.out.println("La reaccion es fulminante. La UEFA estalla indignada ante el plan oculto y amenaza con un boicot total a la competición.");
@@ -55,14 +57,15 @@ public static void main(String[] args)
         System.out.println("Pulsa Enter para continuar...");
         sc.nextLine();
 
-    do {
-    System.out.println(" ");
-    System.out.println("========== MENU PRINCIPAL ==========");
-    System.out.println("1. Nueva partida");
-    System.out.println("2. Consultar ranking");
-    System.out.println("3. Ver normas");
-    System.out.println("4. Salir del juego");
-    System.out.print("Elige una opcion: ");
+    do 
+    {
+        System.out.println(" ");
+        System.out.println("========== MENU PRINCIPAL ==========");
+        System.out.println("1. Nueva partida");
+        System.out.println("2. Consultar ranking");
+        System.out.println("3. Ver normas");
+        System.out.println("4. Salir del juego");
+        System.out.print("Elige una opcion: ");        
 
     opcion = sc.nextInt();
     sc.nextLine();
@@ -70,15 +73,35 @@ public static void main(String[] args)
         switch (opcion) 
         {
             case 1:
+                System.out.println(" ");
+                System.out.println(" ");
                 System.out.print("¿Como te llamas amigo mio? ");
                     jugador jugadorTOP = new jugador(sc.nextLine());
                     jugadorTOP.mostrarEstado();
-              
-                System.out.println("Iniciando nueva partida...");
+
+                System.out.println(" ");
+                System.out.println("INICIANDO NUEVA PARTIDA...");
+                System.out.println("Pulsa ENTER para comenzar la aventura");
+                    sc.nextLine();
+
+                boolean villanoDerrotado = elecciones.rondaInicial(sc, jugadorTOP);
+
+                    if (villanoDerrotado) {
+                        villanoDerrotado = elecciones.ronda1(sc, jugadorTOP);
+                    }
+
+                    if (villanoDerrotado) {
+                        System.out.println("\nHas superado las rondas nacionales...");
+                    } else {
+                        System.out.println("\nGAME OVER. Fin del juego.");
+                        opcion = 4;
+                    }
                 break;
 
             case 2:
+                System.out.println(" ");
                 System.out.println("El ranking aun no lo tengo");
+                System.out.println(" ");
                 break;
 
             case 3:
@@ -112,5 +135,8 @@ public static void main(String[] args)
                 break;
         }
     } while (opcion != 4);
+
+
+ 
 } 
 } 

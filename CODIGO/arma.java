@@ -1,4 +1,4 @@
-public class arma
+public class arma extends juego
 {
     private String nombre;
     private String descripcion;

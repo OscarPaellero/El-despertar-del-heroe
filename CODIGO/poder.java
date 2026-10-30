@@ -1,4 +1,4 @@
-public class poder 
+public class poder extends juego
 {
     private String nombre;
     private String descripcion;

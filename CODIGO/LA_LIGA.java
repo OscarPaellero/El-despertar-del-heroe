@@ -1,4 +1,4 @@
-public class LA_LIGA
+public class LA_LIGA extends juego
 {
 
 

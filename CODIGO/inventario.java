@@ -1,3 +1,4 @@
-public class inventario {
+public class inventario extends juego
+{
     
 }
