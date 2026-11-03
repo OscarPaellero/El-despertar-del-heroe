@@ -1,6 +1,5 @@
 import java.util.Scanner;
-
-public class combate extends elecciones
+public class combate
 {
     public static boolean pelear(jugador jugadorTOP, personaje villano, Scanner sc)
     {

@@ -1,14 +1,14 @@
 import java.util.Scanner;
-
+ 
 public class juego
 {
-
-
+ 
+ 
 public static void main(String[] args) 
 {
     Scanner sc = new Scanner(System.in);
     int opcion;
-
+ 
         System.out.println("==================================");
         System.out.println("     EL DESPERTAR DEL HEROE");
         System.out.println("         FOOTBALL EDITION");
@@ -21,8 +21,8 @@ public static void main(String[] args)
         System.out.println("A si que si no sabes ni quien es Isi Palazon, porfavor, salte de aqui, gracias :) ");
         System.out.println("Pero antes de todo estaria bien saber por que te vas pelear contra gente del mundo del futbol ¿no?");
         System.out.println("");
-
-
+ 
+ 
         System.out.println("QUIERES SABER COMO HEMOS LLEGADO HASTA AQUI?");
         System.out.println("Si es que si, pulsa enter para continuar con la historia...");
             sc.nextLine();
@@ -41,20 +41,20 @@ public static void main(String[] args)
         System.out.println("Pero un mancha quedo inmborrable en la memoria de Infantino");
         System.out.println("Asi que en uno de los arrebatos que le suelen dar a lo millonariso calvos que controlan empresas, decicico hacer una locura....");
         System.out.println("");
-
+ 
         System.out.println("Segimos conla historia?");
         System.out.println("Pulsa enter para continuar con la historia...");
             sc.nextLine();
-
+ 
         System.out.println("");
         System.out.println("Decidio contactar con un de lso cientificos mas brillantes de nuestar era moderna: Hugh Hard");
         System.out.println("Junto a este, creo un mundo de futbol, donde atrapo a avariso futbolistas, dandoles un rol de heroes o de villanso segun el club");
         System.out.println("");
         System.out.println("Tu mision sera ir avanzando club por club, hasta llegar a Infantino, al cual te tendras que enfrentar, para destruir este mundo para siempre");
-
+ 
         System.out.println("Pulsa Enter para continuar...");
         sc.nextLine();
-
+ 
     do 
     {
         System.out.println(" ");
@@ -64,10 +64,10 @@ public static void main(String[] args)
         System.out.println("3. Ver normas");
         System.out.println("4. Salir del juego");
         System.out.print("Elige una opcion: ");        
-
+ 
     opcion = sc.nextInt();
     sc.nextLine();
-
+ 
         switch (opcion) 
         {
             case 1:
@@ -76,33 +76,57 @@ public static void main(String[] args)
                 System.out.print("¿Como te llamas amigo mio? ");
                     jugador jugadorTOP = new jugador(sc.nextLine());
                     jugadorTOP.mostrarEstado();
-
+ 
                 System.out.println(" ");
                 System.out.println("INICIANDO NUEVA PARTIDA...");
                 System.out.println("Pulsa ENTER para comenzar la aventura");
                     sc.nextLine();
-
+ 
+                // NIVEL 1: LALIGA
                 boolean villanoDerrotado = elecciones.rondaInicial(sc, jugadorTOP);
-
+ 
                     if (villanoDerrotado) {
                         villanoDerrotado = elecciones.ronda1(sc, jugadorTOP);
                     }
-
+                    if (villanoDerrotado) {
+                        villanoDerrotado = elecciones.ronda2(sc, jugadorTOP);
+                    }
+                    if (villanoDerrotado) {
+                        villanoDerrotado = elecciones.ronda3(sc, jugadorTOP);
+                    }
+                    if (villanoDerrotado) {
+                        villanoDerrotado = elecciones.rondaFinalLaLiga(sc, jugadorTOP);
+                    }
+                // NIVEL 2: INTERNACIONALES
                     if (villanoDerrotado) {
                         System.out.println("Has superado las rondas nacionales...");
+                        villanoDerrotado = elecciones.rondaInter1(sc, jugadorTOP);
+                    }
+                    if (villanoDerrotado) {
+                        villanoDerrotado = elecciones.rondaInter2(sc, jugadorTOP);
+                    }
+                    if (villanoDerrotado) {
+                        villanoDerrotado = elecciones.rondaInter3(sc, jugadorTOP);
+                    }
+                // FINAL
+                    if (villanoDerrotado) {
+                        villanoDerrotado = elecciones.rondaInfantino(sc, jugadorTOP);
+                    }
+                    if (villanoDerrotado) {
+                        System.out.println("¡HAS DESTRUIDO EL MUNDO DE FUTBOL! Enhorabuena, campeon.");
                     } else {
                         System.out.println("GAME OVER. Fin del juego.");
                         System.out.println("===/====/===/===/===/===/===/===/====/===/===/===/===/===/");
                         opcion = 4;
                     }
                 break;
-
+ 
             case 2:
                 System.out.println(" ");
                 System.out.println("El ranking aun no lo tengo");
                 System.out.println(" ");
                 break;
-
+ 
             case 3:
                 System.out.println(" ");
                 System.out.println(" ");
@@ -124,7 +148,7 @@ public static void main(String[] args)
                 System.out.println("6. Tu mision final sera enfrentarte a Infantino, para poder destruir este mundo que nunca deberia de haber sido creado.");
                 System.out.println(" ");
                 System.out.println("==================================");
-
+ 
                 break;
             case 4:
                 System.out.println("Gracias por jugar. ¡Hasta pronto!");
@@ -134,8 +158,5 @@ public static void main(String[] args)
                 break;
         }
     } while (opcion != 4);
-
-
- 
 } 
 } 
