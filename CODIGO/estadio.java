@@ -1,13 +1,13 @@
-public class estadio
+public class Estadio
 {
     private String nombreEstadio;
-    private personaje enemigo; //no es un texto, es un objeto personaje, en este caso h epuesto enemigo
-    private personaje heroe; // aqui pasa lo mismo, pero en vez dee enemigo, con heroe
+    private Personaje enemigo; //no es un texto, es un objeto personaje, en este caso h epuesto enemigo
+    private Personaje heroe; // aqui pasa lo mismo, pero en vez dee enemigo, con heroe
     private String nombreClub;
  
 
     // Constructor: se ejecuta con "new estadio(...)" y guarda los datos que le quiera pasar
-    public estadio(String estadio, personaje enemigo, personaje heroe, String club)
+    public Estadio(String estadio, Personaje enemigo, Personaje heroe, String club)
     {
         this.nombreEstadio = estadio;
         this.enemigo = enemigo; 
@@ -18,10 +18,10 @@ public class estadio
     public String getEstadio() {
         return this.nombreEstadio;
     }
-        public personaje getVillano() {
+        public Personaje getVillano() {
         return this.enemigo;
     }
-    public personaje getHeroe() {
+    public Personaje getHeroe() {
         return this.heroe;
     }
     public String getClub() {

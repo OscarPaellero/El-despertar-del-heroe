@@ -1,8 +1,7 @@
 import java.util.Scanner;
  
-public class juego
+public class Juego
 {
- 
  
 public static void main(String[] args) 
 {
@@ -74,7 +73,7 @@ public static void main(String[] args)
                 System.out.println(" ");
                 System.out.println(" ");
                 System.out.print("¿Como te llamas amigo mio? ");
-                    jugador jugadorTOP = new jugador(sc.nextLine());
+                    Jugador jugadorTOP = new Jugador(sc.nextLine());
                     jugadorTOP.mostrarEstado();
  
                 System.out.println(" ");
@@ -82,35 +81,35 @@ public static void main(String[] args)
                 System.out.println("Pulsa ENTER para comenzar la aventura");
                     sc.nextLine();
  
-                // NIVEL 1: LALIGA
-                boolean villanoDerrotado = elecciones.rondaInicial(sc, jugadorTOP);
+                    // NIVEL 1: LALIGA
+                boolean villanoDerrotado = Elecciones.rondaInicial(sc, jugadorTOP);
  
                     if (villanoDerrotado) {
-                        villanoDerrotado = elecciones.ronda1(sc, jugadorTOP);
+                        villanoDerrotado = Elecciones.ronda1(sc, jugadorTOP);
                     }
                     if (villanoDerrotado) {
-                        villanoDerrotado = elecciones.ronda2(sc, jugadorTOP);
+                        villanoDerrotado = Elecciones.ronda2(sc, jugadorTOP);
                     }
                     if (villanoDerrotado) {
-                        villanoDerrotado = elecciones.ronda3(sc, jugadorTOP);
+                        villanoDerrotado = Elecciones.ronda3(sc, jugadorTOP);
                     }
                     if (villanoDerrotado) {
-                        villanoDerrotado = elecciones.rondaFinalLaLiga(sc, jugadorTOP);
+                        villanoDerrotado = Elecciones.rondaFinalLaLiga(sc, jugadorTOP);
                     }
-                // NIVEL 2: INTERNACIONALES
+                    // NIVEL 2: INTERNACIONALES
                     if (villanoDerrotado) {
                         System.out.println("Has superado las rondas nacionales...");
-                        villanoDerrotado = elecciones.rondaInter1(sc, jugadorTOP);
+                        villanoDerrotado = Elecciones.rondaInter1(sc, jugadorTOP);
                     }
                     if (villanoDerrotado) {
-                        villanoDerrotado = elecciones.rondaInter2(sc, jugadorTOP);
+                        villanoDerrotado = Elecciones.rondaInter2(sc, jugadorTOP);
                     }
                     if (villanoDerrotado) {
-                        villanoDerrotado = elecciones.rondaInter3(sc, jugadorTOP);
+                        villanoDerrotado = Elecciones.rondaInter3(sc, jugadorTOP);
                     }
                 // FINAL
                     if (villanoDerrotado) {
-                        villanoDerrotado = elecciones.rondaInfantino(sc, jugadorTOP);
+                        villanoDerrotado = Elecciones.rondaInfantino(sc, jugadorTOP);
                     }
                     if (villanoDerrotado) {
                         System.out.println("¡HAS DESTRUIDO EL MUNDO DE FUTBOL! Enhorabuena, campeon.");
@@ -153,6 +152,7 @@ public static void main(String[] args)
             case 4:
                 System.out.println("Gracias por jugar. ¡Hasta pronto!");
                 break;
+            
             default:
                 System.out.println("Opcion incorrecta. Elige del 1 al 4.");
                 break;

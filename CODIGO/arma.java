@@ -1,10 +1,10 @@
-public class arma
+public class Arma
 {
     private String nombre;
     private String descripcion;
     private int daño;
 
-    public arma(String nombre, String descripcion, int daño)
+    public Arma(String nombre, String descripcion, int daño)
     {
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -22,4 +22,5 @@ public class arma
     public int getDaño() {
         return this.daño;
     }
+
 }

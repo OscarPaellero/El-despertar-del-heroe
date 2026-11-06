@@ -1,10 +1,10 @@
-public class poder extends juego
+public class Poder extends Juego
 {
     private String nombre;
     private String descripcion;
     private int daño;
 
-    public poder(String nombre, String descripcion, int daño)
+    public Poder(String nombre, String descripcion, int daño)
     {
         this.nombre = nombre;
         this.descripcion = descripcion;
