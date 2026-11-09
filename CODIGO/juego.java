@@ -113,11 +113,14 @@ public static void main(String[] args)
                     }
                     if (villanoDerrotado) {
                         System.out.println("¡HAS DESTRUIDO EL MUNDO DE FUTBOL! Enhorabuena, campeon.");
+                        int bonus = jugadorTOP.sumarVidaFinal();
+                        System.out.println("Bonificacion por vida restante: " + bonus + " puntos");
                     } else {
                         System.out.println("GAME OVER. Fin del juego.");
                         System.out.println("===/====/===/===/===/===/===/===/====/===/===/===/===/===/");
                         opcion = 4;
                     }
+                    System.out.println("Puntuacion final: " + jugadorTOP.getPuntos());
                 break;
  
             case 2:

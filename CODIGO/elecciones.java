@@ -49,7 +49,7 @@ public class Elecciones
 // ---------------- RONDA INICIAL ----------------
     public static boolean rondaInicial(Scanner sc, Jugador jugadorTOP)
     {
-        Estadio estd0 = new Estadio("Mestalla", Personaje.villanoLim, Personaje.heroeVilla, "Valencia CF");
+        Estadio estd0 = new Estadio("Mestalla", new VillanoLim(), Personaje.heroeVilla, "Valencia CF");
  
         System.out.println("===== RONDA INICIAL =====");
         estd0.presentar();
@@ -63,9 +63,9 @@ public class Elecciones
 // ---------------- RONDA 1 ----------------
     public static boolean ronda1(Scanner sc, Jugador jugadorTOP)
     {
-        Estadio estd1 = new Estadio("Estadio de la Ceramica", Personaje.villanoRoig, Personaje.heroeSenna, "Villarreal CF");
-        Estadio estd2 = new Estadio("Estadio de Vallecas", Personaje.villanoPresa, Personaje.heroePalazon, "Rayo Vallecano");
-        Estadio estd3 = new Estadio("RCDE Stadium", Personaje.villanoJoselu, Personaje.heroeJarque, "RCD Espanyol");
+        Estadio estd1 = new Estadio("Estadio de la Ceramica", new VillanoRoig(), Personaje.heroeSenna, "Villarreal CF");
+        Estadio estd2 = new Estadio("Estadio de Vallecas", new VillanoPresa(), Personaje.heroePalazon, "Rayo Vallecano");
+        Estadio estd3 = new Estadio("RCDE Stadium", new VillanoJoselu(), Personaje.heroeJarque, "RCD Espanyol");
  
         return rondaDe3(sc, jugadorTOP, "RONDA 1", estd1, estd2, estd3);
     }
@@ -74,9 +74,9 @@ public class Elecciones
 // ---------------- RONDA 2 ----------------
     public static boolean ronda2(Scanner sc, Jugador jugadorTOP)
     {
-        Estadio estd1 = new Estadio("Coliseum", Personaje.villanoTorres, Personaje.heroeBordalas, "Getafe CF");
-        Estadio estd2 = new Estadio("San Mames", Personaje.villanoLlorente, Personaje.heroeMuniain, "Athletic Club");
-        Estadio estd3 = new Estadio("Balaidos", Personaje.villanoDorovic, Personaje.heroeAspas, "RC Celta de Vigo");
+        Estadio estd1 = new Estadio("Coliseum", new VillanoTorres(), Personaje.heroeBordalas, "Getafe CF");
+        Estadio estd2 = new Estadio("San Mames", new VillanoLlorente(), Personaje.heroeMuniain, "Athletic Club");
+        Estadio estd3 = new Estadio("Balaidos", new VillanoDorovic(), Personaje.heroeAspas, "RC Celta de Vigo");
  
         return rondaDe3(sc, jugadorTOP, "RONDA 2", estd1, estd2, estd3);
     }
@@ -85,9 +85,9 @@ public class Elecciones
 // ---------------- RONDA 3 ----------------
     public static boolean ronda3(Scanner sc, Jugador jugadorTOP)
     {
-        Estadio estd1 = new Estadio("Ramon Sanchez-Pizjuan", Personaje.villanoDelNido, Personaje.heroeNavas, "Sevilla FC");
-        Estadio estd2 = new Estadio("Benito Villamarin", Personaje.villanoLopera, Personaje.heroeJoaquin, "Real Betis");
-        Estadio estd3 = new Estadio("Metropolitano", Personaje.villanoGil, Personaje.heroeGriezmann, "Atletico de Madrid");
+        Estadio estd1 = new Estadio("Ramon Sanchez-Pizjuan", new VillanoDelNido(), Personaje.heroeNavas, "Sevilla FC");
+        Estadio estd2 = new Estadio("Benito Villamarin", new VillanoLopera(), Personaje.heroeJoaquin, "Real Betis");
+        Estadio estd3 = new Estadio("Metropolitano", new VillanoGil(), Personaje.heroeGriezmann, "Atletico de Madrid");
  
         return rondaDe3(sc, jugadorTOP, "RONDA 3", estd1, estd2, estd3);
     }
@@ -96,8 +96,8 @@ public class Elecciones
 // ---------------- RONDA FINAL LALIGA (Barcelona o Madrid) ----------------
     public static boolean rondaFinalLaLiga(Scanner sc, Jugador jugadorTOP)
     {
-        Estadio estd1 = new Estadio("Camp Nou", Personaje.villanoLaporta, Personaje.heroeMessi, "FC Barcelona");
-        Estadio estd2 = new Estadio("Santiago Bernabeu", Personaje.villanoFlorentino, Personaje.heroeCristiano, "Real Madrid");
+        Estadio estd1 = new Estadio("Camp Nou", new VillanoLaporta(), Personaje.heroeMessi, "FC Barcelona");
+        Estadio estd2 = new Estadio("Santiago Bernabeu", new VillanoFlorentino(), Personaje.heroeCristiano, "Real Madrid");
         Estadio elegido = null;
  
         while (elegido == null) 
@@ -143,9 +143,9 @@ public class Elecciones
 // ---------------- INTERNACIONAL RONDA 1 ----------------
     public static boolean rondaInter1(Scanner sc, Jugador jugadorTOP)
     {
-        Estadio estd1 = new Estadio("La Bombonera", Personaje.villanoPalermo, Personaje.heroeRiquelme, "Boca Juniors");
-        Estadio estd2 = new Estadio("El Monumental", Personaje.villanoHiguain, Personaje.heroeFrancescoli, "River Plate");
-        Estadio estd3 = new Estadio("Signal Iduna Park", Personaje.villanoLewandowski, Personaje.heroeReus, "Borussia Dortmund");
+        Estadio estd1 = new Estadio("La Bombonera", new VillanoPalermo(), Personaje.heroeRiquelme, "Boca Juniors");
+        Estadio estd2 = new Estadio("El Monumental", new VillanoHiguain(), Personaje.heroeFrancescoli, "River Plate");
+        Estadio estd3 = new Estadio("Signal Iduna Park", new VillanoLewandowski(), Personaje.heroeReus, "Borussia Dortmund");
  
         return rondaDe3(sc, jugadorTOP, "INTERNACIONAL - RONDA 1", estd1, estd2, estd3);
     }
@@ -154,9 +154,9 @@ public class Elecciones
 // ---------------- INTERNACIONAL RONDA 2 ----------------
     public static boolean rondaInter2(Scanner sc, Jugador jugadorTOP)
     {
-        Estadio estd1 = new Estadio("Parque de los Principes", Personaje.villanoMbappe, Personaje.heroeZlatan, "Paris Saint-Germain");
-        Estadio estd2 = new Estadio("Emirates Stadium", Personaje.villanoVanPersie, Personaje.heroeHenry, "Arsenal");
-        Estadio estd3 = new Estadio("Old Trafford", Personaje.villanoTevez, Personaje.heroeStam, "Manchester United");
+        Estadio estd1 = new Estadio("Parque de los Principes", new VillanoMbappe(), Personaje.heroeZlatan, "Paris Saint-Germain");
+        Estadio estd2 = new Estadio("Emirates Stadium", new VillanoVanPersie(), Personaje.heroeHenry, "Arsenal");
+        Estadio estd3 = new Estadio("Old Trafford", new VillanoTevez(), Personaje.heroeStam, "Manchester United");
  
         return rondaDe3(sc, jugadorTOP, "INTERNACIONAL - RONDA 2", estd1, estd2, estd3);
     }
@@ -165,9 +165,9 @@ public class Elecciones
 // ---------------- INTERNACIONAL RONDA 3 ----------------
     public static boolean rondaInter3(Scanner sc, Jugador jugadorTOP)
     {
-        Estadio estd1 = new Estadio("San Siro", Personaje.villanoDonnarumma, Personaje.heroeMaldini, "AC Milan");
-        Estadio estd2 = new Estadio("Allianz Arena", Personaje.villanoBoateng, Personaje.heroeBeckenbauer, "Bayern Munich");
-        Estadio estd3 = new Estadio("Anfield", Personaje.villanoSuarez, Personaje.heroeWenger, "Liverpool FC");
+        Estadio estd1 = new Estadio("San Siro", new VillanoDonnarumma(), Personaje.heroeMaldini, "AC Milan");
+        Estadio estd2 = new Estadio("Allianz Arena", new VillanoBoateng(), Personaje.heroeBeckenbauer, "Bayern Munich");
+        Estadio estd3 = new Estadio("Anfield", new VillanoSuarez(), Personaje.heroeWenger, "Liverpool FC");
  
         return rondaDe3(sc, jugadorTOP, "INTERNACIONAL - RONDA 3", estd1, estd2, estd3);
     }
@@ -181,8 +181,7 @@ public class Elecciones
         System.out.println("Pulsa ENTER para luchar...");
         sc.nextLine();
  
-        return Combate.pelear(jugadorTOP, Personaje.villanoInfantino, sc);
+        return Combate.pelear(jugadorTOP, new VillanoInfantino(), sc);
     }
  
 }
- 

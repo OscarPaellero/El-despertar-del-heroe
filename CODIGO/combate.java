@@ -1,7 +1,10 @@
+import java.util.Random;
 import java.util.Scanner;
  
 public class Combate
 {
+    private static Random random = new Random();
+
     public static boolean pelear(Jugador jugadorTOP, Personaje villano, Scanner sc)
     {
         System.out.println(" ");
@@ -29,6 +32,8 @@ public class Combate
         if (villano.getVida() <= 0) {
             System.out.println(" ");
             System.out.println("¡HAS DERROTADO AL MISMISIMO " + villano.getNombre() + "!, QUE LOCURA NIÑOOOOOOOOOOOO");
+            int ganados = jugadorTOP.sumarPuntos();
+            System.out.println("Has ganado " + ganados + " puntos. Total: " + jugadorTOP.getPuntos());
             System.out.println(" ");
             System.out.println("Pulsa ENTER para saber tus siguintes destinos");
                 sc.nextLine();
@@ -46,8 +51,15 @@ public class Combate
  
     public static void mostrarVidas(Jugador TOP, Personaje villano)
     {
-        System.out.println(TOP.getNombre() + ": " + TOP.getVida() + " de vida");
+        System.out.println(TOP.getNombre() + " (" + TOP.getPuntos() + " puntos): " + TOP.getVida() + " de vida");
         System.out.println(villano.getNombre() + ": " + villano.getVida() + " de vida");
+        if (villano.getEscudo() != null) {
+            if (villano.getEscudo().estaRoto()) {
+                System.out.println("Escudo de " + villano.getNombre() + ": ROTO");
+            } else {
+                System.out.println("Escudo de " + villano.getNombre() + ": " + villano.getEscudo().getVida() + "/" + villano.getEscudo().getVidaMax());
+            }
+        }
     }
  
     // NUEVO: menu de 3 opciones. Devuelve true si este turno te defiendes con el escudo
@@ -103,34 +115,86 @@ public class Combate
     public static void ataqueJugador(Jugador TOP, Personaje villano)
     {
         int dano = TOP.getArma().getDaño();
- 
-        villano.setVida(villano.getVida() - dano);
         System.out.println("|-------------------------------");
-        System.out.println("| Atacas con " + TOP.getArma().getNombre() + " y haces " + dano + " de daño.");
-    }
- 
-    // Ahora recibe "bloqueando" para saber si te defiendes
-    public static void ataqueVillano(Jugador TOP, Personaje villano, boolean bloqueando)
-    {
-        int dano = villano.getArma().getDaño();
- 
-        if (bloqueando) {
-            // Con escudo: tu recibes el 10% del daño y el escudo el 15%
-            int danoJugador = (int) Math.round(dano * 0.10);
+
+        if (villano.isDefendiendo()) {
+            // Con escudo: el villano recibe el 10% del daño y el escudo el 15%
+            int danoVillano = (int) Math.round(dano * 0.10);
             int danoEscudo = (int) Math.round(dano * 0.15);
- 
-            TOP.setVida(TOP.getVida() - danoJugador);
-            TOP.getEscudo().recibirDano(danoEscudo);
- 
-            System.out.println("| " + villano.getNombre() + " te ataca con " + villano.getArma().getNombre() + " y bloqueas el golpe.");
-            System.out.println("| Recibes " + danoJugador + " de daño y el escudo " + danoEscudo + ".");
-            if (TOP.getEscudo().estaRoto()) {
-                System.out.println("| ¡Tu escudo se ha roto!");
+
+            villano.setVida(villano.getVida() - danoVillano);
+            villano.getEscudo().recibirDano(danoEscudo);
+            villano.setDefendiendo(false);
+
+            System.out.println("| Atacas con " + TOP.getArma().getNombre() + " pero " + villano.getNombre() + " se defiende con el escudo.");
+            System.out.println("| " + villano.getNombre() + " recibe " + danoVillano + " de daño y el escudo " + danoEscudo + ".");
+            if (villano.getEscudo().estaRoto()) {
+                System.out.println("| ¡El escudo de " + villano.getNombre() + " se ha roto!");
             }
         } else {
-            // Sin escudo: el golpe entero, como antes
-            TOP.setVida(TOP.getVida() - dano);
-            System.out.println("| " + villano.getNombre() + " te ataca con " + villano.getArma().getNombre() + " y te hace " + dano + " de daño.");
+            villano.setVida(villano.getVida() - dano);
+            System.out.println("| Atacas con " + TOP.getArma().getNombre() + " y haces " + dano + " de daño.");
+        }
+    }
+
+    // Cada turno elige al azar una accion. Si el villano no puede hacerla, prueba otra
+    public static int accionVillano(Jugador TOP, Personaje villano)
+    {
+        int vidaJugador = TOP.getVida();
+
+        for (int intentos = 0; intentos < 100; intentos++) {
+            int tipo = random.nextInt(6) + 1;
+            int dano = -1;
+
+            if (tipo == 1) {
+                dano = villano.turnoCombatiente(vidaJugador);
+            }
+            if (tipo == 2) {
+                dano = villano.turnoTirador(vidaJugador);
+            }
+            if (tipo == 3) {
+                dano = villano.turnoJinete(vidaJugador);
+            }
+            if (tipo == 4) {
+                dano = villano.turnoSanador(vidaJugador);
+            }
+            if (tipo == 5) {
+                dano = villano.turnoInvocador(vidaJugador);
+            }
+            if (tipo == 6) {
+                dano = villano.turnoHechicero(vidaJugador);
+            }
+
+            if (dano >= 0) {
+                return dano;
+            }
+        }
+
+        System.out.println("| " + villano.getNombre() + " ataca con " + villano.getArma().getNombre());
+        return villano.getDanoAtaque();
+    }
+
+    public static void ataqueVillano(Jugador TOP, Personaje villano, boolean bloqueando)
+    {
+        int dano = accionVillano(TOP, villano);
+
+        if (dano > 0) {
+            if (bloqueando) {
+                // Con escudo: tu recibes el 10% del daño y el escudo el 15%
+                int danoJugador = (int) Math.round(dano * 0.10);
+                int danoEscudo = (int) Math.round(dano * 0.15);
+
+                TOP.setVida(TOP.getVida() - danoJugador);
+                TOP.getEscudo().recibirDano(danoEscudo);
+
+                System.out.println("| Bloqueas el golpe. Recibes " + danoJugador + " de daño y el escudo " + danoEscudo + ".");
+                if (TOP.getEscudo().estaRoto()) {
+                    System.out.println("| ¡Tu escudo se ha roto!");
+                }
+            } else {
+                TOP.setVida(TOP.getVida() - dano);
+                System.out.println("| Recibes " + dano + " de daño.");
+            }
         }
         System.out.println("|-------------------------------");
     }
