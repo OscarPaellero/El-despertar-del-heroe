@@ -1,3 +1,4 @@
+import VILLANOS.*;
 import java.util.Scanner; 
  
 public class Elecciones

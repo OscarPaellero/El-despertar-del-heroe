@@ -1,10 +1,12 @@
-public class Poder extends Juego
+package VILLANOS;
+
+public class Arma
 {
     private String nombre;
     private String descripcion;
     private int daño;
 
-    public Poder(String nombre, String descripcion, int daño)
+    public Arma(String nombre, String descripcion, int daño)
     {
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -22,4 +24,5 @@ public class Poder extends Juego
     public int getDaño() {
         return this.daño;
     }
+
 }

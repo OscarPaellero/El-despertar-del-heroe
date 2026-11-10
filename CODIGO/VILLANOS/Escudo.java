@@ -1,3 +1,5 @@
+package VILLANOS;
+
 public class Escudo
 {
     private int vidaMax;

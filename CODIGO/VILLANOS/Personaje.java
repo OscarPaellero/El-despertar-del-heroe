@@ -1,3 +1,5 @@
+package VILLANOS;
+
 import java.util.Random;
 
 public class Personaje
@@ -98,22 +100,19 @@ public class Personaje
 // -------------------------- RONDA 1 -------------------------- 
 
     // VILLAREAL ------------------
-    public static Personaje heroeSenna = 
-    new Personaje("Marcos Senna", 30,
+    public static Personaje heroeSenna = new Personaje("Marcos Senna", 30,
     new Arma("Bote de pastillas", "El bote que nunca se vacia.", 20),
     new Poder("Curacion", "Cura a quien lo necesite.", 15));
 
 
     // RAYO VALLECANO ------------------
-    public static Personaje heroePalazon = 
-    new Personaje("Isi Palazon", 30,
+    public static Personaje heroePalazon = new Personaje("Isi Palazon", 30,
     new Arma("Rayo de Vallecas", "Un rayo que cae sobre el rival.", 20),
     new Poder("Calva luminosa", "Una calva que ciega al rival.", 15));
 
 
     // ESPANYOL ------------------
-    public static Personaje heroeJarque = 
-    new Personaje("Dani Jarque", 30,
+    public static Personaje heroeJarque = new Personaje("Dani Jarque", 30,
     new Arma("Brazalete eterno", "Un brazalete que nunca se rompe.", 20),
     new Poder("Eternidad", "Su recuerdo no se apaga.", 15));
 
@@ -121,22 +120,19 @@ public class Personaje
 // -------------------------- RONDA 2 -------------------------- 
 
     // GETAFE ------------------
-    public static Personaje heroeBordalas =
-    new Personaje("Bordalas", 30,
+    public static Personaje heroeBordalas = new Personaje("Bordalas", 30,
     new Arma("Gafas de ultravision", "Unas gafas que ven mas alla de lo normal.", 20),
     new Poder("Carisma insoportable", "Un carisma que nadie aguanta.", 15));
 
 
     // ATHLETIC CLUB ------------------
-    public static Personaje heroeMuniain =
-    new Personaje("Iker Muniain", 30,
+    public static Personaje heroeMuniain = new Personaje("Iker Muniain", 30,
     new Arma("Escudo de leon", "Un escudo con la fuerza de un leon.", 20),
     new Poder("Barba paragolpes", "Una barba que amortigua cualquier golpe.", 15));
 
 
     // CELTA ------------------
-    public static Personaje heroeAspas =
-    new Personaje("Iago Aspas", 30,
+    public static Personaje heroeAspas = new Personaje("Iago Aspas", 30,
     new Arma("Cetro de Triskel de Moana", "Un cetro con el simbolo celta.", 20),
     new Poder("Regate de Akapo", "Un regate imposible de parar.", 15));
 
@@ -144,22 +140,19 @@ public class Personaje
 // -------------------------- RONDA 3 -------------------------- 
 
     // SEVILLA ------------------
-    public static Personaje heroeNavas =
-    new Personaje("Jesus Navas", 30,
+    public static Personaje heroeNavas = new Personaje("Jesus Navas", 30,
     new Arma("Microfono de El Arrebato", "Un microfono de radio.", 20),
     new Poder("El viento de Nervion", "Una carrera por la banda que arrasa.", 15));
 
 
     // BETIS ------------------
-    public static Personaje heroeJoaquin =
-    new Personaje("Joaquin", 30,
+    public static Personaje heroeJoaquin = new Personaje("Joaquin", 30,
     new Arma("Baston del huliogan", "Un baston muy travieso.", 20),
     new Poder("Risa desternillante", "Una risa que descoloca al rival.", 15));
 
 
     // ATLETICO DE MADRID ------------------
-    public static Personaje heroeGriezmann =
-    new Personaje("Griezmann", 30,
+    public static Personaje heroeGriezmann = new Personaje("Griezmann", 30,
     new Arma("Pincel de corona francesa", "Un pincel con el que pinta jugadas.", 20),
     new Poder("Baile hipnotico", "Un baile que hipnotiza al rival.", 15));
 
@@ -167,15 +160,13 @@ public class Personaje
 // -------------------------- RONDA FINAL NIVEL 1 -------------------------- 
  
     // FC BARCELONA ------------------
-    public static Personaje heroeMessi =
-    new Personaje("Messi", 50,
+    public static Personaje heroeMessi = new Personaje("Messi", 50,
     new Arma("Bota de zurdo", "Una bota de zurdo magica.", 30),
     new Poder("Anomalia de crecimiento", "Un crecimiento fuera de lo normal.", 20));
 
 
     // REAL MADRID ------------------
-    public static Personaje heroeCristiano =
-    new Personaje("Cristiano Ronaldo", 50,
+    public static Personaje heroeCristiano = new Personaje("Cristiano Ronaldo", 50,
     new Arma("Jabalina de trueno", "Una jabalina cargada de trueno.", 30),
     new Poder("Vuelo de chilena", "Una chilena que vuela.", 20));
 
@@ -185,22 +176,19 @@ public class Personaje
 // -------------------------- RONDA 1 -------------------------- 
 
     // BOCA JUNIORS ------------------
-    public static Personaje heroeRiquelme =
-    new Personaje("J.R. Riquelme", 30,
+    public static Personaje heroeRiquelme = new Personaje("J.R. Riquelme", 30,
     new Arma("Balon inmortal", "Un balon que nunca se pierde.", 20),
     new Poder("Llamada en vivo", "Una llamada en vivo.", 15));
 
 
     // RIVER PLATE ------------------
-    public static Personaje heroeFrancescoli =
-    new Personaje("Francescoli", 30,
+    public static Personaje heroeFrancescoli = new Personaje("Francescoli", 30,
     new Arma("Coche de Cars", "Un coche de carreras.", 20),
     new Poder("Chilena del millon", "Una chilena que vale un millon.", 15));
 
 
     // BORUSSIA DORTMUND ------------------
-    public static Personaje heroeReus =
-    new Personaje("Reus", 30,
+    public static Personaje heroeReus = new Personaje("Reus", 30,
     new Arma("Muro amarillo", "Un muro amarillo imposible de pasar.", 20),
     new Poder("Edad de piedra", "Un golpe de la edad de piedra.", 15));
 
@@ -208,22 +196,23 @@ public class Personaje
 // -------------------------- RONDA 2 -------------------------- 
 
     // PARIS SAINT-GERMAIN ------------------
-    public static Personaje heroeZlatan =
-    new Personaje("Zlatan Ibrahimovic", 30,
+    public static Personaje heroeZlatan = new Personaje("Zlatan Ibrahimovic", 30,
     new Arma("Coleta de aura", "Una coleta con mucha aura.", 20),
     new Poder("Taekondo", "Patadas de taekondo.", 15));
 
 
     // ARSENAL ------------------
-    public static Personaje heroeHenry =
-    new Personaje("Thierry Henry", 30,
+
+
+    public static Personaje heroeHenry =new Personaje("Thierry Henry", 30,
     new Arma("Cañonazo", "Un cañonazo imparable.", 20),
     new Poder("Sprint de calvicie", "Un sprint de calvicie.", 15));
 
 
     // MANCHESTER UNITED ------------------
-    public static Personaje heroeStam =
-    new Personaje("Jaap Stam", 30,
+
+
+    public static Personaje heroeStam = new Personaje("Jaap Stam", 30,
     new Arma("Escudo de sangre", "Un escudo manchado de sangre.", 20),
     new Poder("Mirada de aura", "Una mirada con mucha aura.", 15));
 
@@ -231,22 +220,25 @@ public class Personaje
 // -------------------------- RONDA 3 -------------------------- 
 
     // AC MILAN ------------------
-    public static Personaje heroeMaldini =
-    new Personaje("Maldini", 30,
+
+
+    public static Personaje heroeMaldini = new Personaje("Maldini", 30,
     new Arma("Entrada limpia", "Una entrada limpia y perfecta.", 20),
     new Poder("Atractivamiento", "Un atractivo que atrae al rival.", 15));
 
 
     // BAYERN MUNICH ------------------
-    public static Personaje heroeBeckenbauer =
-    new Personaje("Beckenbauer", 30,
+
+
+    public static Personaje heroeBeckenbauer = new Personaje("Beckenbauer", 30,
     new Arma("Balon imperial", "Un balon imperial.", 20),
     new Poder("Libero", "Cura 20 al equipo.", 15));
 
 
     // LIVERPOOL ------------------
-    public static Personaje heroeWenger =
-    new Personaje("Arsene Wenger", 30,
+
+
+    public static Personaje heroeWenger = new Personaje("Arsene Wenger", 30,
     new Arma("Abrigo de los kilometros", "Un abrigo larguisimo.", 20),
     new Poder("Años eternos", "Años y años de experiencia.", 15));
 
@@ -308,7 +300,7 @@ public class Personaje
         return random.nextInt(max);
     }
 
-    // Turnos que sobreescribe cada villano segun sus interfaces. -1 significa que no tiene esa accion
+    // Cada villano sobreescribe solo los turnos de sus interfaces. -1 = no tiene esa acción, Combate tira otra vez el dado; 0 = actuó sin daño
     public int turnoCombatiente(int vidaJugador) {
         return -1;
     }

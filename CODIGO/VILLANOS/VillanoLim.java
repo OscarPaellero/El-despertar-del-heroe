@@ -1,3 +1,5 @@
+package VILLANOS;
+
 import INTERFACES.IntCombatiente;
 
 public class VillanoLim extends Personaje implements IntCombatiente
@@ -7,22 +9,20 @@ public class VillanoLim extends Personaje implements IntCombatiente
         super("Peter Lim", 60,
         new Arma("Silencio", "Te bloquea un ataque.", 8),
         new Poder("Venta forzosa", "Te quita una pocion.", 8));
-        setDanoAtaque(4, 12);
+        setDanoAtaque(5, 15);
         setEscudo(new Escudo(20));
         setUmbralEscudo(25);
     }
 
     @Override
-    public int atacarConArma(int jugadorTOP)
-    {
+    public int atacarConArma(int jugadorTOP) {
         setDefendiendo(false);
         System.out.println("| " + getNombre() + " ataca con " + getArma().getNombre());
         return getDanoAtaque();
     }
 
     @Override
-    public void levantarEscudo()
-    {
+    public void levantarEscudo() {
         if (getEscudo().estaRoto()) {
             System.out.println("| El escudo de " + getNombre() + " esta roto y no puede defenderse");
             return;
@@ -32,20 +32,17 @@ public class VillanoLim extends Personaje implements IntCombatiente
     }
 
     @Override
-    public boolean escudoLevantado()
-    {
+    public boolean escudoLevantado() {
         return isDefendiendo();
     }
 
     @Override
-    public int getDefensa()
-    {
+    public int getDefensa() {
         return getEscudo().getVida();
     }
 
     @Override
-    public int turnoCombatiente(int vidaJugador)
-    {
+    public int turnoCombatiente(int vidaJugador) {
         boolean pocaVida = getVidaPorcentaje() < getUmbralEscudo();
         boolean puedeDefender = !escudoLevantado() && !getEscudo().estaRoto();
 

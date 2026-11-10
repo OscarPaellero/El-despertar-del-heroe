@@ -1,10 +1,12 @@
-public class Arma
+package VILLANOS;
+
+public class Poder
 {
     private String nombre;
     private String descripcion;
     private int daño;
 
-    public Arma(String nombre, String descripcion, int daño)
+    public Poder(String nombre, String descripcion, int daño)
     {
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -22,5 +24,4 @@ public class Arma
     public int getDaño() {
         return this.daño;
     }
-
 }

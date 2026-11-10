@@ -1,3 +1,5 @@
+import VILLANOS.*;
+
 public class Jugador
 {
     private String nombre;
@@ -39,11 +41,11 @@ public class Jugador
     public Escudo getEscudo() {
         return this.escudo;
     }
- 
+
     public int getPuntos() {
         return this.puntos;
     }
- 
+
     // Cada enemigo derrotado da 100 puntos. Guarda la vida con la que acaba el combate
     public int sumarPuntos()
     {
@@ -52,14 +54,14 @@ public class Jugador
         this.vidaFinal = this.vida;
         return 100;
     }
- 
+
     // Solo se llama al ganar toda la aventura: suma la vida restante
     public int sumarVidaFinal()
     {
         this.puntos = this.puntos + this.vidaFinal;
         return this.vidaFinal;
     }
- 
+
     public void setVida(int vida) { this.vida = vida; }
     public void setArma(Arma nuevaArma) { this.armaActual = nuevaArma; }
  
