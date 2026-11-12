@@ -99,6 +99,7 @@ public static void main(String[] args)
                     // NIVEL 2: INTERNACIONALES
                     if (villanoDerrotado) {
                         System.out.println("Has superado las rondas nacionales...");
+                        Elecciones.puertasDeLaLiga(sc, jugadorTOP);
                         villanoDerrotado = Elecciones.rondaInter1(sc, jugadorTOP);
                     }
                     if (villanoDerrotado) {
@@ -108,6 +109,9 @@ public static void main(String[] args)
                         villanoDerrotado = Elecciones.rondaInter3(sc, jugadorTOP);
                     }
                 // FINAL
+                    if (villanoDerrotado) {
+                        villanoDerrotado = Elecciones.rondaTraidor(sc, jugadorTOP);
+                    }
                     if (villanoDerrotado) {
                         villanoDerrotado = Elecciones.rondaInfantino(sc, jugadorTOP);
                     }

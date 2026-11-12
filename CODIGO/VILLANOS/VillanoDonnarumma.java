@@ -1,8 +1,8 @@
 package VILLANOS;
 
 import INTERFACES.IntCombatiente;
-import INTERFACES.IntTirador;
 import INTERFACES.IntSanador;
+import INTERFACES.IntTirador;
 
 public class VillanoDonnarumma extends Personaje implements IntCombatiente, IntTirador, IntSanador
 {

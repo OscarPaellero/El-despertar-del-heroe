@@ -1,8 +1,8 @@
 package VILLANOS;
 
 import INTERFACES.IntCombatiente;
-import INTERFACES.IntSanador;
 import INTERFACES.IntInvocador;
+import INTERFACES.IntSanador;
 
 public class VillanoGil extends Personaje implements IntCombatiente, IntSanador, IntInvocador
 {

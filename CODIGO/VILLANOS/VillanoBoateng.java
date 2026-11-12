@@ -1,7 +1,7 @@
 package VILLANOS;
 
-import INTERFACES.IntSanador;
 import INTERFACES.IntInvocador;
+import INTERFACES.IntSanador;
 
 public class VillanoBoateng extends Personaje implements IntSanador, IntInvocador
 {

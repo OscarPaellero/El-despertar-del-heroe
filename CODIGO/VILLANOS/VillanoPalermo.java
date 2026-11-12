@@ -1,8 +1,8 @@
 package VILLANOS;
 
 import INTERFACES.IntCombatiente;
-import INTERFACES.IntTirador;
 import INTERFACES.IntHechicero;
+import INTERFACES.IntTirador;
 
 public class VillanoPalermo extends Personaje implements IntCombatiente, IntTirador, IntHechicero
 {

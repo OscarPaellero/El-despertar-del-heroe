@@ -1,7 +1,7 @@
 package VILLANOS;
 
-import INTERFACES.IntTirador;
 import INTERFACES.IntHechicero;
+import INTERFACES.IntTirador;
 
 public class VillanoFlorentino extends Personaje implements IntTirador, IntHechicero
 {

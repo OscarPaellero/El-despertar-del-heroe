@@ -25,4 +25,9 @@ public class Arma
         return this.daño;
     }
 
+    // Sube el daño del arma (se usa para mejorar la espada del jugador)
+    public void subirDaño(int cantidad) {
+        this.daño = this.daño + cantidad;
+    }
+
 }

@@ -1,7 +1,7 @@
 package VILLANOS;
 
-import INTERFACES.IntTirador;
 import INTERFACES.IntInvocador;
+import INTERFACES.IntTirador;
 
 public class VillanoPresa extends Personaje implements IntTirador, IntInvocador
 {

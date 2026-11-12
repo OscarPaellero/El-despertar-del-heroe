@@ -1,6 +1,6 @@
 import VILLANOS.*;
 
-public class Viaje
+public class ViajePersonaj
 {
     public static void main(String[] args)
     {

@@ -1,8 +1,8 @@
 package VILLANOS;
 
 import INTERFACES.IntCombatiente;
-import INTERFACES.IntSanador;
 import INTERFACES.IntHechicero;
+import INTERFACES.IntSanador;
 
 public class VillanoDelNido extends Personaje implements IntCombatiente, IntSanador, IntHechicero
 {

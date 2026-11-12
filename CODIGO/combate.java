@@ -6,13 +6,42 @@ public class Combate
 {
     private static Random random = new Random();
 
+    // Combate completo: si ganas, te da los puntos, mejora tu arma y te cura
     public static boolean pelear(Jugador jugadorTOP, Personaje villano, Scanner sc)
     {
+        if (!pelearFase(jugadorTOP, villano, sc)) {
+            return false;
+        }
+
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("¡HAS DERROTADO AL MISMISIMO " + villano.getNombre() + "!, QUE LOCURA NIÑOOOOOOOOOOOO");
+        int ganados = jugadorTOP.sumarPuntos();
+        System.out.println("Has ganado " + ganados + " puntos. Total: " + jugadorTOP.getPuntos());
+
+        // Cada combate ganado mejora tu arma
+        jugadorTOP.getArma().subirDaño(jugadorTOP.getSubidaArma());
+        System.out.println(jugadorTOP.getArma().getNombre() + " mejora y ahora hace " + jugadorTOP.getArma().getDaño() + " de daño.");
+        System.out.println(" ");
+        System.out.println("Pulsa ENTER para saber tus siguintes destinos");
+            sc.nextLine();
+
+        jugadorTOP.curarTrasCombate();
+        return true;
+    }
+
+    // Solo los turnos del combate, sin premios. Los combates finales lo usan para cada fase
+    public static boolean pelearFase(Jugador jugadorTOP, Personaje villano, Scanner sc)
+    {
+        System.out.println(" ");
         System.out.println(" ");
         System.out.println("========================================================== ");
         System.out.println("¡Comienza el combate contra " + villano.getNombre() + "!");
         System.out.println("========================================================== ");
         int turno = 1;
+
+        // Cada combate nuevo, todos los aliados recuperan su poder
+        jugadorTOP.getInventario().reiniciarPoderes();
  
         while (jugadorTOP.getVida() > 0 && villano.getVida() > 0) {
             System.out.println(" ");
@@ -31,18 +60,10 @@ public class Combate
         }
  
         if (villano.getVida() <= 0) {
-            System.out.println(" ");
-            System.out.println("¡HAS DERROTADO AL MISMISIMO " + villano.getNombre() + "!, QUE LOCURA NIÑOOOOOOOOOOOO");
-            int ganados = jugadorTOP.sumarPuntos();
-            System.out.println("Has ganado " + ganados + " puntos. Total: " + jugadorTOP.getPuntos());
-            System.out.println(" ");
-            System.out.println("Pulsa ENTER para saber tus siguintes destinos");
-                sc.nextLine();
- 
-            jugadorTOP.setVida(100 + 10);
             return true;
         }
- 
+
+        System.out.println(" ");
         System.out.println(" ");
         System.out.println("===/====/===/===/===/===/===/===/====/===/===/===/===/===/ ");
         System.out.println(villano.getNombre() + " te ha derrotado... (Eres un poquito malo la verdad)");
@@ -63,7 +84,7 @@ public class Combate
         }
     }
  
-    // NUEVO: menu de 3 opciones. Devuelve true si este turno te defiendes con el escudo
+    // NUEVO: menu de 5 opciones. Devuelve true si este turno te defiendes con el escudo
     public static boolean turnoJugador(Jugador TOP, Personaje villano, Scanner sc)
     {
         // Se repite hasta que elijas una accion valida
@@ -77,6 +98,8 @@ public class Combate
                 System.out.println("2. Defenderse con el escudo (" + TOP.getEscudo().getVida() + "/" + TOP.getEscudo().getVidaMax() + ")");
             }
             System.out.println("3. Tomar pocion de curacion (quedan " + TOP.getInventario().getPociones() + ")");
+            System.out.println("4. Usar el poder de un aliado (" + TOP.getInventario().getPoderesDisponibles() + " disponibles)");
+            System.out.println("5. Salir del juego");
             System.out.print("Opcion: ");
             int eleccion = sc.nextInt();
             sc.nextLine();
@@ -91,8 +114,12 @@ public class Combate
                         System.out.println("Tu escudo esta roto, no puedes usarlo hasta despues de la ronda final de LaLiga.");
                         break;
                     }
+                    System.out.println(" ");
+                    System.out.println(" ");
+                    System.out.println(" ");
                     System.out.println("|-------------------------------");
                     System.out.println("| Levantas el escudo y te preparas para el golpe.");
+                    System.out.println("|-------------------------------");
                     return true;
                 case 3:
                     // Sin pociones tampoco vale y vuelve a pedir opcion
@@ -103,12 +130,78 @@ public class Combate
                     // Gasta la pocion del inventario y suma la vida que cura
                     int cura = TOP.getInventario().usarPocion();
                     TOP.setVida(TOP.getVida() + cura);
+                    System.out.println(" ");
+                    System.out.println(" ");
+                    System.out.println(" ");
                     System.out.println("|-------------------------------");
                     System.out.println("| Te tomas una pocion y recuperas " + cura + " de vida.");
+                    System.out.println("|-------------------------------");
                     return false;
-                default:
-                    System.out.println("Opcion incorrecta. Elige del 1 al 3.");
+                case 4:
+                    // Sin aliados con poder tampoco vale y vuelve a pedir opcion
+                    if (TOP.getInventario().getPoderesDisponibles() == 0) {
+                        System.out.println("No tienes ningun aliado con el poder disponible.");
+                        break;
+                    }
+                    // Si eliges "0. Volver" no se gasta el turno y vuelve al menu
+                    if (poderAliado(TOP, villano, sc)) {
+                        return false;
+                    }
                     break;
+                case 5:
+                    System.out.println("Abandonas la aventura. Hasta la proxima, " + TOP.getNombre() + ".");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opcion incorrecta. Elige del 1 al 5.");
+                    break;
+            }
+        }
+    }
+
+    // Deja elegir un aliado y su poder le quita vida al villano (atraviesa el escudo).
+    // Devuelve true si se ha usado un poder y false si has vuelto atras
+    public static boolean poderAliado(Jugador TOP, Personaje villano, Scanner sc)
+    {
+        Inventario inv = TOP.getInventario();
+
+        while (true) {
+            System.out.println(" ");
+            System.out.println("Elige el aliado que usa su poder:");
+            for (int i = 0; i < inv.getNumAliados(); i++) {
+                Personaje aliado = inv.getAliado(i);
+                if (inv.poderUsado(i)) {
+                    System.out.println((i + 1) + ". " + aliado.getNombre() + " (poder ya usado)");
+                } else {
+                    System.out.println((i + 1) + ". " + aliado.getNombre() + " - " + aliado.getPoder().getNombre() + " (" + aliado.getPoder().getDaño() + " de daño)");
+                }
+            }
+            System.out.println("0. Volver");
+            System.out.print("Opcion: ");
+            int eleccion = sc.nextInt();
+            sc.nextLine();
+
+            if (eleccion == 0) {
+                return false;
+            }
+            if (eleccion < 1 || eleccion > inv.getNumAliados()) {
+                System.out.println("Opcion incorrecta.");
+            } else if (inv.poderUsado(eleccion - 1)) {
+                System.out.println("Ese aliado ya ha usado su poder en este combate.");
+            } else {
+                Personaje aliado = inv.getAliado(eleccion - 1);
+                int dano = aliado.getPoder().getDaño();
+
+                villano.setVida(villano.getVida() - dano);
+                inv.gastarPoder(eleccion - 1);
+
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println("|-------------------------------");
+                System.out.println("| " + aliado.getNombre() + " usa " + aliado.getPoder().getNombre() + " y " + villano.getNombre() + " recibe " + dano + " de daño.");
+                System.out.println("|-------------------------------");
+                return true;
             }
         }
     }
@@ -116,6 +209,9 @@ public class Combate
     public static void ataqueJugador(Jugador TOP, Personaje villano)
     {
         int dano = TOP.getArma().getDaño();
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
         System.out.println("|-------------------------------");
 
         if (villano.isDefendiendo()) {
@@ -127,6 +223,9 @@ public class Combate
             villano.getEscudo().recibirDano(danoEscudo);
             villano.setDefendiendo(false);
 
+            System.out.println(" ");
+            System.out.println(" ");
+            System.out.println(" ");
             System.out.println("| Atacas con " + TOP.getArma().getNombre() + " pero " + villano.getNombre() + " se defiende con el escudo.");
             System.out.println("| " + villano.getNombre() + " recibe " + danoVillano + " de daño y el escudo " + danoEscudo + ".");
             if (villano.getEscudo().estaRoto()) {

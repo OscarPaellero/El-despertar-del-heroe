@@ -1,7 +1,7 @@
 package VILLANOS;
 
-import INTERFACES.IntJinete;
 import INTERFACES.IntHechicero;
+import INTERFACES.IntJinete;
 
 public class VillanoVanPersie extends Personaje implements IntJinete, IntHechicero
 {

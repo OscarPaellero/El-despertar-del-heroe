@@ -6,9 +6,9 @@ public class VillanoLim extends Personaje implements IntCombatiente
 {
     public VillanoLim()
     {
-        super("Peter Lim", 60,
-        new Arma("Silencio", "Te bloquea un ataque.", 8),
-        new Poder("Venta forzosa", "Te quita una pocion.", 8));
+        super("Peter Lim", 100,
+        new Arma("Silencio", "Te bloquea un ataque.", 12),
+        new Poder("Venta forzosa", "Te quita una pocion.", 10));
         setDanoAtaque(5, 15);
         setEscudo(new Escudo(20));
         setUmbralEscudo(25);

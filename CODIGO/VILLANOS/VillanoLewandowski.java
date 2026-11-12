@@ -1,8 +1,8 @@
 package VILLANOS;
 
 import INTERFACES.IntCombatiente;
-import INTERFACES.IntTirador;
 import INTERFACES.IntInvocador;
+import INTERFACES.IntTirador;
 
 public class VillanoLewandowski extends Personaje implements IntCombatiente, IntTirador, IntInvocador
 {

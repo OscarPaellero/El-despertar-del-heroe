@@ -32,6 +32,8 @@ public class Estadio
  
     public void presentar()
     {
+        System.out.println(" ");
+        System.out.println(" ");
         System.out.println("=================================================== ");
         System.out.println("¡Bienvenido a " + nombreEstadio + ", el estadio del " + nombreClub);
         System.out.println(" ");
