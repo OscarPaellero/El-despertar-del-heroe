@@ -10,12 +10,12 @@ public class Jugador
     private int puntos;
     private int enemigosDerrotados;
     private int vidaFinal;
-    private int subidaArma = 1;
+    private int subidaArma = 2;
  
     public Jugador(String nombre)
     {
         this.nombre = nombre;
-        this.vida = 1000;
+        this.vida = 100;
         this.armaActual = new Arma("Banderin del corner", "Un banderin de corner normal y corriente, solo que esta roto, porque me he encontrado a Vardy y se ha tirado contra el de cabeza.", 10);
         this.inventario = new Inventario();
         this.escudo = new Escudo(20);
@@ -63,13 +63,20 @@ public class Jugador
         return this.vidaFinal;
     }
 
-    // Tras cada victoria la vida vuelve a 100 + 5 por cada enemigo derrotado (105, 110, 115...)
+    // Tras cada victoria la vida vuelve a 100 + 10 por cada enemigo derrotado (110, 120, 130...)
     public void curarTrasCombate()
     {
-        this.vida = 100 + 5 * this.enemigosDerrotados;
+        this.vida = 100 + 10 * this.enemigosDerrotados;
     }
 
-    // Cuanto daño gana el arma en cada victoria (1 en LaLiga, 4 en las internacionales)
+    // Recupera algo de vida entre las fases de los combates finales, sin pasar del maximo
+    public void curarEntreFases(int cantidad)
+    {
+        int maximo = 100 + 10 * this.enemigosDerrotados;
+        this.vida = Math.min(this.vida + cantidad, maximo);
+    }
+
+    // Cuanto daño gana el arma en cada victoria (2 en LaLiga, 6 en las internacionales)
     public int getSubidaArma() {
         return this.subidaArma;
     }

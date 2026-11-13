@@ -10,14 +10,14 @@ public class VillanoMbappe extends Personaje implements IntCombatiente, IntJinet
 
     public VillanoMbappe()
     {
-        super("Mbappe", 200,
-        new Arma("Brazalete dictatorial", "Hace que un ataque aleatorio te quite x3.", 30),
-        new Poder("Sprint", "Te ataca el doble cada 3 rondas.", 30));
-        setDanoAtaque(15, 45);
+        super("Mbappe", 160,
+        new Arma("Brazalete dictatorial", "Hace que un ataque aleatorio te quite x3.", 27),
+        new Poder("Sprint", "Te ataca el doble cada 3 rondas.", 27));
+        setDanoAtaque(20, 35);
         setEscudo(new Escudo(20));
-        setUmbralEscudo(15);
-        setAnimal("cohete");
-        setUmbralMontura(15);
+        setUmbralEscudo(30);
+        setAnimal("Cohete");
+        setUmbralMontura(25);
     }
 
     @Override

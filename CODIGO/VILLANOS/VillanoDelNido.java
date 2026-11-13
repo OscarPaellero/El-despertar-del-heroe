@@ -15,9 +15,9 @@ public class VillanoDelNido extends Personaje implements IntCombatiente, IntSana
         super("Del Nido Jr", 100,
         new Arma("Baston del contrato vitalicio", "Te quita un x1,5 en cada ataque durante esta ronda.", 15),
         new Poder("Herencia", "Se cura +10 aleatoriamente.", 15));
-        setDanoAtaque(8, 22);
+        setDanoAtaque(8, 20);
         setEscudo(new Escudo(20));
-        setUmbralEscudo(25);
+        setUmbralEscudo(35);
         setUmbralCuracion(30);
     }
 

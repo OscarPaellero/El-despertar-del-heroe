@@ -8,8 +8,8 @@ public class VillanoTraidor extends Personaje implements IntCombatiente
     public VillanoTraidor(String nombre, int vida)
     {
         super(nombre, vida,
-        new Arma("Golpe traicionero", "Un golpe por la espalda de quien confiabas.", 20),
-        new Poder("Traicion", "Te ataca cuando menos lo esperas.", 20));
+        new Arma("Golpe traicionero", "Un golpe por la espalda de quien confiabas.", 50),
+        new Poder("Traicion", "Te ataca cuando menos lo esperas.", 50));
         setDanoAtaque(10, 25);
         setEscudo(new Escudo(20));
         setUmbralEscudo(25);

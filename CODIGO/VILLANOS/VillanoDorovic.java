@@ -12,9 +12,9 @@ public class VillanoDorovic extends Personaje implements IntCombatiente, IntTira
         super("Goran Dorovic", 90,
         new Arma("Escudo rebotante", "Te hace el doble.", 12),
         new Poder("Doble identidad", "El proximo ataque te lo haces a ti mismo.", 12));
-        setDanoAtaque(6, 18);
+        setDanoAtaque(6, 17);
         setEscudo(new Escudo(20));
-        setUmbralEscudo(40);
+        setUmbralEscudo(30);
     }
 
     @Override

@@ -11,13 +11,13 @@ public class VillanoLewandowski extends Personaje implements IntCombatiente, Int
 
     public VillanoLewandowski()
     {
-        super("Lewandowski", 160,
+        super("Lewandowski", 130,
         new Arma("Asalto de traicion", "Hace que uno de tus aliados te ataque sin querer.", 20),
         new Poder("La ramatada polaca", "Te tira 5 balonazos de 5 de vida menos cada uno.", 20));
-        setDanoAtaque(10, 30);
+        setDanoAtaque(15, 25);
         setEscudo(new Escudo(20));
         setUmbralEscudo(25);
-        setCriatura("aliado traicionero");
+        setCriatura("Aliado de los 9 minutos");
         setMaxInvocados(3);
     }
 

@@ -26,15 +26,15 @@ public class VillanoInfantino extends Personaje implements IntCombatiente, IntTi
     public VillanoInfantino(int vida, int danoMin, int danoMax)
     {
         super("Gianni Infantino", vida,
-        new Arma("Tarjeta roja manipulada", "Te saca una tarjeta roja que te anula 2 ataques seguidos, 20%.", 60),
+        new Arma("La tarjeta roja", "Un palo hecho de tarjetas rojas", 60),
         new Poder("Tres fases", "1ª: mata a un aliado al caer. 2ª: revive a 2 enemigos y hace x1,5 de daño. 3ª: hace x2 de daño.", 60));
         setDanoAtaque(danoMin, danoMax);
         setEscudo(new Escudo(20));
         setUmbralEscudo(50);
         setUmbralCuracion(50);
-        setAnimal("dragon");
+        setAnimal("Dragon");
         setUmbralMontura(10);
-        setCriatura("guardia de la FIFA");
+        setCriatura("Guardia de la FIFA");
         setMaxInvocados(3);
     }
 

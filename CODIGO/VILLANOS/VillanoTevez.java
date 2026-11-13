@@ -11,11 +11,11 @@ public class VillanoTevez extends Personaje implements IntTirador, IntJinete
 
     public VillanoTevez()
     {
-        super("Carlos Tevez", 200,
-        new Arma("Cola de apache", "Le arranca la cola a un apache y te la lanza -15.", 30),
-        new Poder("Noche azul", "Cambia el cielo por una noche que te hace no ver nada, y te anula 2 ataques.", 30));
-        setDanoAtaque(15, 45);
-        setAnimal("caballo apache");
+        super("Carlos Tevez", 160,
+        new Arma("Cola de apache", "Le arranca la cola a un apache y te la lanza -15.", 27),
+        new Poder("Noche azul", "Cambia el cielo por una noche que te hace no ver nada, y te anula 2 ataques.", 27));
+        setDanoAtaque(20, 35);
+        setAnimal("Apache macheteador");
         setUmbralMontura(20);
     }
 

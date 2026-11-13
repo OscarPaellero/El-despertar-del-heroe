@@ -11,13 +11,13 @@ public class VillanoDonnarumma extends Personaje implements IntCombatiente, IntT
 
     public VillanoDonnarumma()
     {
-        super("Donnarumma", 250,
-        new Arma("Billetardos", "Te tira billetes -7 por cada uno entre 5 y 15.", 40),
+        super("Donnarumma", 200,
+        new Arma("Billetardos", "Te tira billetes con su cara que te marean", 40),
         new Poder("Parada", "Te anula un bloqueo cada 3 ataques.", 40));
-        setDanoAtaque(20, 60);
+        setDanoAtaque(25, 40);
         setEscudo(new Escudo(20));
         setUmbralEscudo(40);
-        setUmbralCuracion(25);
+        setUmbralCuracion(35);
     }
 
     @Override

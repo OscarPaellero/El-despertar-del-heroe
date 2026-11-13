@@ -11,10 +11,10 @@ public class VillanoFlorentino extends Personaje implements IntTirador, IntHechi
 
     public VillanoFlorentino()
     {
-        super("Florentino Perez", 120,
+        super("Florentino Perez", 110,
         new Arma("Fachada del Bernabeu", "Te tira una fachada que te tapa la vision y el siguiente golpe que haces lo fallas.", 17),
         new Poder("Fichaje galo", "Si eres Galo te quita un 20% de vida de un solo golpe.", 17));
-        setDanoAtaque(8, 26);
+        setDanoAtaque(10, 20);
     }
 
     @Override

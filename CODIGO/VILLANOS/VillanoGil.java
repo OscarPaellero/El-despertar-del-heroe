@@ -14,11 +14,11 @@ public class VillanoGil extends Personaje implements IntCombatiente, IntSanador,
         super("Jesus Gil", 100,
         new Arma("Mazo de Marbella", "Mazo de dinero que te quita 20 de vida.", 15),
         new Poder("Jacuzzi de verdad", "Invoca un jacuzzi que te hace y te quita -15 de vida.", 15));
-        setDanoAtaque(8, 22);
+        setDanoAtaque(8, 20);
         setEscudo(new Escudo(20));
         setUmbralEscudo(30);
-        setUmbralCuracion(35);
-        setCriatura("jacuzzi de verdad");
+        setUmbralCuracion(30);
+        setCriatura("Jefe de lso Jacuzzis de Marbella");
         setMaxInvocados(1);
     }
 

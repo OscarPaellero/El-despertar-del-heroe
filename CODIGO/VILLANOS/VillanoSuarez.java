@@ -11,12 +11,12 @@ public class VillanoSuarez extends Personaje implements IntJinete, IntSanador
 
     public VillanoSuarez()
     {
-        super("Luis Suarez", 250,
+        super("Luis Suarez", 200,
         new Arma("Colmillos de nariz", "Te ataca con su colmillo y te lo clava quitandote 20 de vida.", 40),
         new Poder("Mordisco", "Te muerde cada 3 rondas y te quita 10 de vida.", 40));
-        setDanoAtaque(20, 60);
+        setDanoAtaque(25, 40);
         setUmbralCuracion(30);
-        setAnimal("tiburon");
+        setAnimal("Tiburon");
         setUmbralMontura(30);
     }
 

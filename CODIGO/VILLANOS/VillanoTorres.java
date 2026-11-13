@@ -14,9 +14,9 @@ public class VillanoTorres extends Personaje implements IntInvocador, IntHechice
         super("Angel Torres", 90,
         new Arma("Agentes libres", "Trae a un esbirro que te quita 10 de vida.", 12),
         new Poder("Protesta", "Hay un 25% de que te quite el turno.", 12));
-        setDanoAtaque(6, 18);
-        setCriatura("agente libre");
-        setMaxInvocados(2);
+        setDanoAtaque(6, 17);
+        setCriatura("Agente Libre");
+        setMaxInvocados(3);
     }
 
     @Override

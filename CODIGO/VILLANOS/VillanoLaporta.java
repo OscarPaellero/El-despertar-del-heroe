@@ -12,13 +12,13 @@ public class VillanoLaporta extends Personaje implements IntCombatiente, IntInvo
 
     public VillanoLaporta()
     {
-        super("Laporta", 120,
-        new Arma("Palanca cosmica", "Te mete un palancazo y se añade 15 de vida.", 17),
-        new Poder("Llamada de Negreira", "25% de quitarte una pocion.", 17));
-        setDanoAtaque(8, 26);
+        super("Laporta", 110,
+        new Arma("Palanca cosmica", "Te mete un palancazo", 17),
+        new Poder("Llamada de Negreira", "Llama a Negreira y te hace pupita", 17));
+        setDanoAtaque(10, 20);
         setEscudo(new Escudo(20));
         setUmbralEscudo(20);
-        setCriatura("mensajero de Negreira");
+        setCriatura("Mensajero de Negreira");
         setMaxInvocados(2);
     }
 

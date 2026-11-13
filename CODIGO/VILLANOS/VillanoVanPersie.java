@@ -12,11 +12,11 @@ public class VillanoVanPersie extends Personaje implements IntJinete, IntHechice
 
     public VillanoVanPersie()
     {
-        super("Van Persie", 200,
-        new Arma("Roja de la final", "Te saca una roja por la cara que te anula los dos siguientes ataques.", 30),
-        new Poder("Ejecutor de serpiente", "Te marca un golazo que te noquea 1 ataque.", 30));
-        setDanoAtaque(15, 45);
-        setAnimal("serpiente gigante");
+        super("Van Persie", 160,
+        new Arma("Roja de la final", "Te saca una roja por la cara que te anula los dos siguientes ataques.", 27),
+        new Poder("Ejecutor de serpiente", "Te marca un golazo que te noquea 1 ataque.", 27));
+        setDanoAtaque(20, 35);
+        setAnimal("Serpiente Gigante");
         setUmbralMontura(25);
     }
 

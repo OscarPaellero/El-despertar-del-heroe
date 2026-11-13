@@ -12,10 +12,10 @@ public class VillanoPalermo extends Personaje implements IntCombatiente, IntTira
 
     public VillanoPalermo()
     {
-        super("Martin Palermo", 160,
+        super("Martin Palermo", 130,
         new Arma("Penal fallado", "Usa un penalti que te quita un x3 de vida.", 20),
         new Poder("Mal milagro de la lluvia", "Te anula 1 de cada 3 ataques.", 20));
-        setDanoAtaque(10, 30);
+        setDanoAtaque(15, 25);
         setEscudo(new Escudo(20));
         setUmbralEscudo(35);
     }

@@ -14,7 +14,7 @@ public class VillanoRoig extends Personaje implements IntCombatiente, IntSanador
         new Poder("Muro", "+5 de vida a el mismo.", 10));
         setDanoAtaque(5, 15);
         setEscudo(new Escudo(20));
-        setUmbralEscudo(30);
+        setUmbralEscudo(20);
         setUmbralCuracion(40);
     }
 

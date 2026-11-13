@@ -12,10 +12,10 @@ public class VillanoLlorente extends Personaje implements IntCombatiente, IntInv
         super("Fernando Llorente", 90,
         new Arma("Diente de leon", "Te apuñala quitandote 10 de vida.", 12),
         new Poder("Maman", "Sale una araña gigante que te quita 20 de vida.", 12));
-        setDanoAtaque(6, 18);
+        setDanoAtaque(6, 17);
         setEscudo(new Escudo(20));
-        setUmbralEscudo(35);
-        setCriatura("araña gigante");
+        setUmbralEscudo(30);
+        setCriatura("Leonardo");
         setMaxInvocados(3);
     }
 

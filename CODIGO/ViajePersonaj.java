@@ -2,7 +2,7 @@ import VILLANOS.*;
 
 public class ViajePersonaj
 {
-    public static void main(String[] args)
+    public static void main(String[] args) 
     {
         VillanoLim lim = new VillanoLim();
         System.out.println("=== " + lim.getNombre() + " ===");

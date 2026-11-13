@@ -10,13 +10,13 @@ public class VillanoBoateng extends Personaje implements IntSanador, IntInvocado
 
     public VillanoBoateng()
     {
-        super("Boateng", 250,
+        super("Boateng", 200,
         new Arma("Hermano gemelo", "Se duplica y te quita el doble.", 40),
         new Poder("Entrada de un astro", "Tiene un 25% de aturdirte.", 40));
-        setDanoAtaque(20, 60);
-        setUmbralCuracion(60);
-        setCriatura("hermano gemelo");
-        setMaxInvocados(1);
+        setDanoAtaque(25, 40);
+        setUmbralCuracion(30);
+        setCriatura("Hermano gemelo");
+        setMaxInvocados(3);
     }
 
     @Override

@@ -198,7 +198,7 @@ public class Elecciones
  
         System.out.println(" ");
         // En el nivel internacional el arma mejora mas en cada victoria
-        jugadorTOP.setSubidaArma(4);
+        jugadorTOP.setSubidaArma(6);
 
         System.out.println("Las puertas se abren. Cruzas con " + jugadorTOP.getInventario().getNumAliados() + " aliados.");
         System.out.println("Pulsa ENTER para continuar...");
@@ -335,6 +335,7 @@ public class Elecciones
             return false;
         }
 
+        jugadorTOP.curarEntreFases(15);
         System.out.println(" ");
         System.out.println(" -- " + nombre + " cae de rodillas, con la respiracion rota. Levanta la vista hacia ti -- ");
         System.out.println("'"+nombre.toUpperCase()+"'" + ": ¿Por que? Yo simplemente queria... no tener miedo.");
@@ -415,9 +416,9 @@ public class Elecciones
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- ¿Y si de verdad eso tiene sentido? ¿Y si todo el dolor sirvio para algo? ¿Y si puedes parar de luchar? -- ");
-        System.out.print(" -- Quizas, solo quizas, Infantino... ");
+        System.out.println(" -- Quizas, solo quizas, Infantino... ");
         sc.nextLine();
-        System.out.println(" tiene razon --  ");
+        System.out.print(" tiene razon --  ");
         sc.nextLine();
         System.out.println(" ");
         System.out.println("'INFANTINO': Unete a mi. Juntos haremos que nadie vuelva a sufrir. Nadie mas tendra que sacrificar a nadie.");
@@ -443,6 +444,7 @@ public class Elecciones
             return false;
         }
 
+        jugadorTOP.curarEntreFases(15);
         System.out.println(" ");
         System.out.println(" ");
         System.out.println("¡HAS DERROTADO A GIANNI INFANTINO!");
@@ -511,6 +513,7 @@ public class Elecciones
             return false;
         }
 
+        jugadorTOP.curarEntreFases(15);
         System.out.println(" ");
         System.out.println(" ");
         System.out.println(" -- ¡ESTA VEZ SI! ¡HAS DERROTADO A GIANNI INFANTINO! -- ");
@@ -545,7 +548,50 @@ public class Elecciones
         System.out.println("'INFANTINO': ¡NO HAY NADIE POR ENCIMA DE MI! ¡ARRODILLATE ANTE LA FIFA!");
         sc.nextLine();
 
-        return Combate.pelear(jugadorTOP, new VillanoInfantino(250, danoMin * 2, danoMax * 2), sc);
+        if (!Combate.pelearFase(jugadorTOP, new VillanoInfantino(250, danoMin * 2, danoMax * 2), sc)) {
+            return false;
+        }
+
+        // Ultimo combate: suma los 100 puntos y guarda la vida para la bonificacion final
+        jugadorTOP.sumarPuntos();
+
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" -- Infantino cae de rodillas. Su cuerpo tiembla y la corona de trofeos rueda por el suelo -- ");
+        sc.nextLine();
+        System.out.println(" ");
+        System.out.println("'INFANTINO': No... no es posible... Yo lo cree todo... Yo soy el futbol...");
+        sc.nextLine();
+        System.out.println(" ");
+        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": No. El futbol es de la gente. Nunca fue tuyo.");
+        sc.nextLine();
+        System.out.println(" ");
+        System.out.println(" -- Das el ultimo golpe. Infantino suelta un grito que atraviesa toda la sala... y despues, el silencio -- ");
+        sc.nextLine();
+        System.out.println(" ");
+        System.out.println(" -- El suelo se rompe. Las paredes se deshacen como si fueran de papel -- ");
+        System.out.println(" -- Los estadios, los carteles y los trofeos empiezan a desaparecer. El mundo que Infantino creo se esta cayendo a pedazos -- ");
+        sc.nextLine();
+        System.out.println(" ");
+        System.out.println(" -- Entre la luz y el polvo, ves a tus aliados que siguen en pie: --");
+        for (int i = 0; i < inv.getNumAliados(); i++) {
+            System.out.println("    - " + inv.getAliado(i).getNombre());
+        }
+        sc.nextLine();
+        System.out.println(" ");
+        System.out.println(" -- Pero no estan todos. Piensas en " + caido.getNombre() + " y en " + caido2.getNombre() + ", que no han podido ver este momento -- ");
+        System.out.println(" -- Y en cada nombre que se quedo atras para que tu llegaras hasta aqui -- ");
+        sc.nextLine();
+        System.out.println(" ");
+        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": Esto es por vosotros. Por todos.");
+        sc.nextLine();
+        System.out.println(" ");
+        System.out.println(" -- Una luz blanca lo cubre todo -- ");
+        System.out.println(" -- Y cuando se apaga, estas de vuelta en el campo de Mestalla, con el cesped bajo los pies y la grada llena -- ");
+        System.out.println(" -- Todo ha terminado. El mundo de Infantino ya no existe -- ");
+        sc.nextLine();
+
+        return true;
     }
 
 }

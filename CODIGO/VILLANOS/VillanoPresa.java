@@ -14,7 +14,7 @@ public class VillanoPresa extends Personaje implements IntTirador, IntInvocador
         new Arma("Pelotas de golf", "Sus esbirros tiran enormes cantidades de estas pelotas.", 10),
         new Poder("Pelazo de señor", "Te tapa la vision con su pelo y no atacas durante 1 turno.", 10));
         setDanoAtaque(5, 15);
-        setCriatura("esbirro con pelotas de golf");
+        setCriatura("Esbirro con pelotas de golf");
         setMaxInvocados(3);
     }
 
