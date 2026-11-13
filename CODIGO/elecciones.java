@@ -331,7 +331,7 @@ public class Elecciones
         sc.nextLine();
 
         // Fase 1: 100 de vida
-        if (!Combate.pelearFase(jugadorTOP, new VillanoTraidor(nombre, 100), sc)) {
+        if (!Combate.pelearFase(jugadorTOP, new VillanoTraidor(nombre, 120), sc)) {
             return false;
         }
 
@@ -343,13 +343,13 @@ public class Elecciones
         System.out.println(" ");
         System.out.println(" -- Todo ha terminado... -- ");
         sc.nextLine();
-        System.out.println("Bueno, parece que todo ha terminado... ");
+        System.out.println(" -- Bueno, parece que todo ha terminado... -- ");
         System.out.println(" -- Algo no va bien: " + nombre + " sonrie -- ");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- Cuando bajais la guardia, " + nombre + " agarra una roca enorme y la lanza con sus ultimas fuerzas -- ");
         String muerto = inv.quitarAliadoAlAzar(true).getNombre();
-        System.out.println("'"+muerto+"'" + ": ¿Eh? ¡Cuidado, la...!");
+        System.out.println("'"+muerto.toUpperCase()+"'" + ": ¿Eh? ¡Cuidado, la...!");
         System.out.println(" -- La roca golpea a " + muerto + " y lo mata en el acto -- ");
         sc.nextLine();
         System.out.println(" ");                                       // mayusuculas
@@ -358,6 +358,8 @@ public class Elecciones
         System.out.println(" ");
         System.out.println("'"+nombre.toUpperCase()+"'" + " se levanta, riendo entre dientes. Sus ojos brillan con un resplandor que no es suyo.");
         System.out.println("'"+nombre.toUpperCase()+"'" + ": Infantino tenia razon. Todos sois unos miserable, el me ha dado una seguna oportunidad, y...voy a acabar con todos vosotros.");
+        sc.nextLine();
+        
         System.out.println(" ");
         System.out.println(" -- Su vida ha AUMENTADO. El combate CONTINUA -- ");
         sc.nextLine();
@@ -378,9 +380,13 @@ public class Elecciones
         System.out.println(" ");
         System.out.println(" ");
         System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println("===== RONDA FINAL =====");
+        System.out.println(" ==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/");
+        System.out.println(" ==/==/                                                            ==/==/");
+        System.out.println(" ==/==/                        RONDA FINAL                         ==/==/");
+        System.out.println(" ==/==/                                                            ==/==/");
+        System.out.println(" ==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/==/");
+        sc.nextLine();
+
         System.out.println(" -- Has llegado a la sede de la FIFA. Gianni Infantino te espera... -- ");
         System.out.println("Pulsa ENTER para continuar...");
         sc.nextLine();
@@ -390,17 +396,21 @@ public class Elecciones
         System.out.println(" -- Al fondo de una sala inmensa, sentado en un trono de trofeos, Gianni Infantino te mira sin moverse -- ");
         System.out.println("'INFANTINO': Por fin llegas, " + jugadorTOP.getNombre() + ". Te esperaba...");
         sc.nextLine();
+
         System.out.println(" ");
         System.out.println("'INFANTINO': Empuñas tu arma, ¿verdad? No hace falta. Primero escuchame. Solo te pido esa oportunidad.");
         sc.nextLine();
+
         System.out.println(" ");
         System.out.println("'INFANTINO': ¿Sabes por que cree este mundo? Porque en el verdadero se estaba muriendo.");
         System.out.println("'INFANTINO': Lesiones graves en cada put* partido, estrellas que se quedan calvos alos 25, y el put*simpo 'Futbol Champain', que los nuevos, ");
         sc.nextLine();
+
         System.out.println(" ");
         System.out.println("'INFANTINO': Aqui nadie envejece. Nadie se lesiona de verdad. Nadie pierde un Mundial por un arbitro.");
         System.out.println("'INFANTINO': Aqui sus heroes viven para siempre. Yo no los encerre: yo los SALVE.");
         sc.nextLine();
+
         System.out.println(" ");
         System.out.println("'INFANTINO': Los villanos solo eran el precio. Alguien tenia que cuidar este mundo, y lo hice con mis manos.");
         System.out.println("'INFANTINO': Dime, " + jugadorTOP.getNombre() + ", ¿cuanto has perdido tu por llegar hasta aqui?");
@@ -455,7 +465,7 @@ public class Elecciones
         System.out.println(" -- Entonces, una risa grave y lenta empieza a retumbar entre las paredes...");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- Tragas saliba y notas como si una bola de fuego estubiera reorriendo tu garganta en estos precisos moemntos -- ");
+        System.out.println(" -- Tragas saliba y notas como si una bola de fuego estubiera reorriendo tu garganta en estos precisos momentos -- ");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" ");
@@ -524,7 +534,7 @@ public class Elecciones
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- Pero Infantino no cae. Se agarra a la pared, se incorpora despacio y te clava la mirada -- ");
-        System.out.println(" -- Infantino: Has cometido un error. Has hecho que me enfade -- ");
+        System.out.println("'INFANTINO': Has cometido un error. Has hecho que me enfade");
         sc.nextLine();
 
         Personaje caido2 = inv.quitarAliadoAlAzar(true);
@@ -538,8 +548,8 @@ public class Elecciones
         sc.nextLine();
         System.out.println(" ");
         System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": ¡NOOOOOOOOOOOOOOOOOOO!");
-        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": ¡ME CAGO EN TODA LA FAMILIA DE INFANTINO! ¡TE VOY A DESTROZAR!");
-        System.out.println("'INFANTINO': Se acabaron los juegos.");
+        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": ¡ME CAGO EN TODA TU GENERACIÓN PAYO MI3RDAAAAAS! ¡TE VOY A MATAR CHACHOOOOO!");
+        System.out.println("'INFANTINO': ¿Estas seguro?, venga a tomar por c*lo...");
         sc.nextLine();
 
         // FASE 3: 250 de vida, x2 de daño. Aqui si da los premios del combate
