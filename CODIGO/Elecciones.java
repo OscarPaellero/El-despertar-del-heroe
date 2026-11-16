@@ -35,8 +35,7 @@ public class Elecciones
             System.out.println("2. " + estd2.getEstadio());
             System.out.println("3. " + estd3.getEstadio());
             System.out.print("Opcion: ");
-            int eleccion = sc.nextInt();
-            sc.nextLine();
+            int eleccion = Juego.leerEntero(sc);
  
             switch (eleccion) 
             {
@@ -126,8 +125,7 @@ public class Elecciones
             System.out.println("1. " + estd1.getEstadio());
             System.out.println("2. " + estd2.getEstadio());
             System.out.print("Opcion: ");
-            int eleccion = sc.nextInt();
-            sc.nextLine();
+            int eleccion = Juego.leerEntero(sc);
  
             switch (eleccion) 
             {
@@ -217,8 +215,7 @@ public class Elecciones
                 System.out.println((i + 1) + ". " + inv.getAliado(i).getNombre());
             }
             System.out.print("Opcion: ");
-            int eleccion = sc.nextInt();
-            sc.nextLine();
+            int eleccion = Juego.leerEntero(sc);
  
             int posicion = -1;
  
@@ -403,7 +400,7 @@ public class Elecciones
 
         System.out.println(" ");
         System.out.println("'INFANTINO': ¿Sabes por que cree este mundo? Porque en el verdadero se estaba muriendo.");
-        System.out.println("'INFANTINO': Lesiones graves en cada put* partido, estrellas que se quedan calvos alos 25, y el put*simpo 'Futbol Champain', que los nuevos, ");
+        System.out.println("'INFANTINO': Lesiones graves en cada put* partido, estrellas que se quedan calvos alos 25, y el put*simpo 'Futbol Champain'");
         sc.nextLine();
 
         System.out.println(" ");
@@ -466,10 +463,6 @@ public class Elecciones
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- Tragas saliba y notas como si una bola de fuego estubiera reorriendo tu garganta en estos precisos momentos -- ");
-        sc.nextLine();
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" -- Empiezas a rezar para que no sea lo que tu crees, y de repente se escucha lo que nunca querrias imaginar -- ");
         sc.nextLine();
         System.out.println(" ");
         System.out.println("'INFANTINO': ¿De verdad creias que me podrias derrotar?");
@@ -555,7 +548,7 @@ public class Elecciones
         // FASE 3: 250 de vida, x2 de daño. Aqui si da los premios del combate
         System.out.println(" ");
         System.out.println(" -- El cielo se rompe. Infantino lo da TODO y su poder se desborda: su daño se duplica, x2 -- ");
-        System.out.println("'INFANTINO': ¡NO HAY NADIE POR ENCIMA DE MI! ¡ARRODILLATE ANTE LA FIFA!");
+        System.out.println("'INFANTINO': ¡NO HAY NADIE POR ENCIMA DE MI! ¡ARRODILLATE ANTE MI!");
         sc.nextLine();
 
         if (!Combate.pelearFase(jugadorTOP, new VillanoInfantino(250, danoMin * 2, danoMax * 2), sc)) {
@@ -574,9 +567,6 @@ public class Elecciones
         sc.nextLine();
         System.out.println(" ");
         System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": No. El futbol es de la gente. Nunca fue tuyo.");
-        sc.nextLine();
-        System.out.println(" ");
-        System.out.println(" -- Das el ultimo golpe. Infantino suelta un grito que atraviesa toda la sala... y despues, el silencio -- ");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- El suelo se rompe. Las paredes se deshacen como si fueran de papel -- ");

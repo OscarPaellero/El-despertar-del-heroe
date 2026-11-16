@@ -49,7 +49,12 @@ public class Combate
             mostrarVidas(jugadorTOP, villano);
  
             boolean bloqueando = turnoJugador(jugadorTOP, villano, sc);
- 
+
+            // Si abandona, se acaba sin que el villano ataque otra vez
+            if (jugadorTOP.haAbandonado()) {
+                return false;
+            }
+
             // Si el villano ya ha muerto con tu golpe, no contraataca
             if (villano.getVida() > 0) {
                 // Le paso si estas bloqueando para que calcule el daño
@@ -101,8 +106,7 @@ public class Combate
             System.out.println("4. Usar el poder de un aliado (" + TOP.getInventario().getPoderesDisponibles() + " disponibles)");
             System.out.println("5. Salir del juego");
             System.out.print("Opcion: ");
-            int eleccion = sc.nextInt();
-            sc.nextLine();
+            int eleccion = Juego.leerEntero(sc);
  
             switch (eleccion) {
                 case 1:
@@ -127,9 +131,15 @@ public class Combate
                         System.out.println("No te quedan pociones.");
                         break;
                     }
-                    // Gasta la pocion del inventario y suma la vida que cura
-                    int cura = TOP.getInventario().usarPocion();
-                    TOP.setVida(TOP.getVida() + cura);
+                    // Con la vida al maximo tampoco vale y no gasta la pocion
+                    if (TOP.getVida() >= TOP.getVidaMaxima()) {
+                        System.out.println("Ya tienes la vida al maximo.");
+                        break;
+                    }
+                    // Gasta la pocion y cura sin pasar del maximo
+                    int vidaAntes = TOP.getVida();
+                    TOP.setVida(Math.min(vidaAntes + TOP.getInventario().usarPocion(), TOP.getVidaMaxima()));
+                    int cura = TOP.getVida() - vidaAntes;
                     System.out.println(" ");
                     System.out.println(" ");
                     System.out.println(" ");
@@ -149,9 +159,10 @@ public class Combate
                     }
                     break;
                 case 5:
+                    // Ya no cierra el programa: la partida termina y pasa por el ranking
                     System.out.println("Abandonas la aventura. Hasta la proxima, " + TOP.getNombre() + ".");
-                    System.exit(0);
-                    break;
+                    TOP.setAbandonado(true);
+                    return false;
                 default:
                     System.out.println("Opcion incorrecta. Elige del 1 al 5.");
                     break;
@@ -178,8 +189,7 @@ public class Combate
             }
             System.out.println("0. Volver");
             System.out.print("Opcion: ");
-            int eleccion = sc.nextInt();
-            sc.nextLine();
+            int eleccion = Juego.leerEntero(sc);
 
             if (eleccion == 0) {
                 return false;

@@ -7,7 +7,23 @@ public static void main(String[] args)
 {
     Scanner sc = new Scanner(System.in);
     int opcion;
- 
+
+    // Ranking: dos arrays paralelos que se cargan desde el XML al arrancar
+    String[] nombresRanking = new String[Ranking.MAX_JUGADORES];
+    int[] puntosRanking = new int[Ranking.MAX_JUGADORES];
+    int contadorRanking = Ranking.cargarRanking(Ranking.RUTA_XML, nombresRanking, puntosRanking);
+
+    boolean xmlCorrecto = contadorRanking != -1;
+    if (!xmlCorrecto) 
+        {
+        System.out.println("Se juega con el ranking vacio y no se guardara hasta que se corrija el XML.");
+        contadorRanking = 0;
+    } else 
+        {
+            // Por si el XML se ha cambiado a mano, la web se pone al dia al arrancar
+            Ranking.generarHTML(Ranking.RUTA_XML);
+        }
+
         System.out.println("==================================");
         System.out.println("     EL DESPERTAR DEL HEROE");
         System.out.println("         FOOTBALL EDITION");
@@ -64,16 +80,23 @@ public static void main(String[] args)
         System.out.println("4. Salir del juego");
         System.out.print("Elige una opcion: ");        
  
-    opcion = sc.nextInt();
-    sc.nextLine();
+    opcion = leerEntero(sc);
  
         switch (opcion) 
         {
             case 1:
                 System.out.println(" ");
                 System.out.println(" ");
-                System.out.print("¿Como te llamas amigo mio? ");
-                    Jugador jugadorTOP = new Jugador(sc.nextLine());
+                // El nombre no puede estar vacio ni ser solo espacios
+                String nombre = "";
+                while (nombre.trim().isEmpty()) {
+                    System.out.print("¿Como te llamas amigo mio? ");
+                    nombre = sc.nextLine();
+                    if (nombre.trim().isEmpty()) {
+                        System.out.println("El nombre no puede estar vacio.");
+                    }
+                }
+                    Jugador jugadorTOP = new Jugador(nombre.trim());
                     jugadorTOP.mostrarEstado();
  
                 System.out.println(" ");
@@ -118,16 +141,23 @@ public static void main(String[] args)
                     if (villanoDerrotado) {
                         finDelJuego(sc, jugadorTOP);
                     } else {
-                        System.out.println("GAME OVER. Fin del juego.");
+                        if (jugadorTOP.haAbandonado()) {
+                            System.out.println("Has abandonado la aventura.");
+                        } else {
+                            System.out.println("GAME OVER. Fin del juego.");
+                        }
                         System.out.println("===/====/===/===/===/===/===/===/====/===/===/===/===/===/");
                         System.out.println("Puntuacion final: " + jugadorTOP.getPuntos());
-                        opcion = 4;
                     }
+
+                    // Toda partida terminada (victoria, derrota o abandono) entra como candidata
+                    contadorRanking = Ranking.registrarPartida(nombresRanking, puntosRanking, contadorRanking,
+                                                               jugadorTOP.getNombre(), jugadorTOP.getPuntos(), xmlCorrecto);
                 break;
- 
+
             case 2:
                 System.out.println(" ");
-                System.out.println("El ranking aun no lo tengo");
+                Ranking.mostrarRanking(nombresRanking, puntosRanking, contadorRanking);
                 System.out.println(" ");
                 break;
  
@@ -164,6 +194,18 @@ public static void main(String[] args)
         }
     } while (opcion != 4);
 }
+
+    // Lee un numero sin que el programa se cierre si se escriben letras
+    public static int leerEntero(Scanner sc)
+    {
+        while (!sc.hasNextInt()) {
+            System.out.print("Eso no es un numero. Escribe un numero: ");
+            sc.nextLine();
+        }
+        int numero = sc.nextInt();
+        sc.nextLine();
+        return numero;
+    }
 
     // Final del juego: puntos totales, creditos y escena despues de los creditos
     public static void finDelJuego(Scanner sc, Jugador jugadorTOP)

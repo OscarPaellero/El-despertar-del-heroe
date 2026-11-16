@@ -11,7 +11,8 @@ public class Jugador
     private int enemigosDerrotados;
     private int vidaFinal;
     private int subidaArma = 2;
- 
+    private boolean abandonado;
+
     public Jugador(String nombre)
     {
         this.nombre = nombre;
@@ -21,6 +22,16 @@ public class Jugador
         this.escudo = new Escudo(20);
         this.puntos = 0;
         this.enemigosDerrotados = 0;
+        this.abandonado = false;
+    }
+
+    // Se marca cuando el jugador elige salir en mitad de un combate
+    public boolean haAbandonado() {
+        return this.abandonado;
+    }
+
+    public void setAbandonado(boolean abandonado) {
+        this.abandonado = abandonado;
     }
  
     public String getNombre() {
@@ -61,6 +72,11 @@ public class Jugador
     {
         this.puntos = this.puntos + this.vidaFinal;
         return this.vidaFinal;
+    }
+
+    // Vida maxima actual: 100 + 10 por cada enemigo derrotado
+    public int getVidaMaxima() {
+        return 100 + 10 * this.enemigosDerrotados;
     }
 
     // Tras cada victoria la vida vuelve a 100 + 10 por cada enemigo derrotado (110, 120, 130...)
