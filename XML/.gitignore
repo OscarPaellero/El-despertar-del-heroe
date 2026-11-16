@@ -1,0 +1,14 @@
+﻿# Archivos compilados de Java (se generan al compilar, no hacen falta en el repositorio)
+*.class
+bin/
+out/
+target/
+
+# Configuración local de Visual Studio Code (depende de cada ordenador)
+.vscode/
+*.code-workspace
+
+# Archivos que crea el sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,10 @@
+<!-- Raíz: de cero a muchos jugadores (el máximo de 10 lo controla Java) -->
+<!ELEMENT ranking (jugador*)>
+
+<!-- Cada jugador: primero el nombre y después los puntos, los dos obligatorios -->
+<!ELEMENT jugador (nombre, puntos)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT puntos (#PCDATA)>
+
+<!-- Puesto que ocupa en la clasificación -->
+<!ATTLIST jugador posicion CDATA #REQUIRED>

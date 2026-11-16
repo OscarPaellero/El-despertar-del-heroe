@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE ranking SYSTEM "ranking.dtd">
+<ranking>
+    <jugador posicion="1">
+        <nombre>David Villa</nombre>
+        <puntos>385</puntos>
+    </jugador>
+    <jugador posicion="2">
+        <nombre>Zlatan Ibrahimovic</nombre>
+        <puntos>342</puntos>
+    </jugador>
+    <jugador posicion="3">
+        <nombre>Leo Messi</nombre>
+        <puntos>200</puntos>
+    </jugador>
+    <jugador posicion="4">
+        <nombre>Jaap Stam</nombre>
+        <puntos>200</puntos>
+    </jugador>
+    <jugador posicion="5">
+        <nombre>JUEGO</nombre>
+        <puntos>200</puntos>
+    </jugador>
+    <jugador posicion="6">
+        <nombre>Cristiano Ronaldo</nombre>
+        <puntos>100</puntos>
+    </jugador>
+    <jugador posicion="7">
+        <nombre>Peter Lim</nombre>
+        <puntos>0</puntos>
+    </jugador>
+</ranking>

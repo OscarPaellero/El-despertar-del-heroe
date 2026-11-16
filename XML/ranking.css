@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2933;
+    margin: 0;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #0b3d2e;
+    margin-bottom: 5px;
+}
+
+h2 {
+    text-align: center;
+    color: #3e4c59;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+th {
+    background-color: #0b3d2e;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #d9e2ec;
+}
+
+/* Filas alternas */
+tbody tr:nth-child(even) {
+    background-color: #eef4f1;
+}
+
+tbody tr:hover {
+    background-color: #d6ebe1;
+}
+
+/* Podio */
+tbody tr:first-child {
+    font-weight: bold;
+    background-color: #fff4c2;
+}
+
+.puesto,
+.puntos {
+    text-align: center;
+}
+
+th:first-child,
+th:last-child {
+    text-align: center;
+}
+
+/* Mensaje */
+.nota {
+    text-align: center;
+    color: #52606d;
+}
+
+.vacio {
+    text-align: center;
+    font-size: 1.2em;
+    color: #9b1c1c;
+    margin-top: 40px;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE ranking SYSTEM "ranking.dtd">
+
+<!-- Es VÁLIDO según la DTD, pero los datos no tienen sentido: lo detecta Java -->
+<ranking>
+    <jugador posicion="1">
+        <nombre>   </nombre>
+        <puntos>muchos</puntos>
+    </jugador>
+</ranking>

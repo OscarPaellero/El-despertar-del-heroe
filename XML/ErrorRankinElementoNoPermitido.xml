@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE ranking SYSTEM "ranking.dtd">
+<!-- ERROR 2: <equipo> no está declarado en la DTD -->
+<ranking>
+    <jugador posicion="1">
+        <nombre>Capitán Mestalla</nombre>
+        <puntos>385</puntos>
+        <equipo>Valencia</equipo>
+    </jugador>
+</ranking>

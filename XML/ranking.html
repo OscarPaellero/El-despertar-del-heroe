@@ -1,0 +1,17 @@
+CONSULTA 1 - Nombres de todos los jugadores
+XPath: /ranking/jugador/nombre
+  -    
+
+CONSULTA 2 - Jugadores con mas de 200 puntos
+XPath: /ranking/jugador[puntos > 200]/nombre
+
+CONSULTA 3 - Puntos de Jaap Stam
+XPath: /ranking/jugador[nombre = 'Jaap Stam']/puntos
+  - 
+
+CONSULTA 4 - Jugadores entre 100 y 300 puntos
+XPath: /ranking/jugador[puntos >= 100 and puntos <= 300]/nombre
+
+CONSULTA 5 - Numero de jugadores en el ranking
+XPath: count(/ranking/jugador)
+  - 1

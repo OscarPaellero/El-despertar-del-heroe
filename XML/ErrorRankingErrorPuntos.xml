@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE ranking SYSTEM "ranking.dtd">
+
+<!-- ERROR 1: al segundo jugador le falta <puntos>, que es obligatorio -->
+<ranking>
+    <jugador posicion="1">
+        <nombre>Capitán Mestalla</nombre>
+        <puntos>385</puntos>
+    </jugador>
+    <jugador posicion="2">
+        <nombre>Tiki &amp; Taka</nombre>
+    </jugador>
+</ranking>
