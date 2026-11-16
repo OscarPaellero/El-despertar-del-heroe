@@ -1,25 +1,46 @@
-# TITULO
-EL DESPERTAR DEL HEROE
+# El despertar del héroe · Football Edition
 
+Aventura textual por turnos en Java ambientada en el fútbol. El jugador combate contra villanos en distintos estadios hasta llegar a Infantino. Las mejores puntuaciones se guardan en un ranking XML, que se valida con una DTD y se publica como página HTML con XSLT.
 
+### Autor: Óscar Rodrigo Breso · Proyecto de la 1.ª evaluación.
 
-# DESCRIPCCION
-Aventura de texto por consola hecha en Java. 
-Un científico loco y el presidente de la FIFA han encerrado a futbolistas en un mundo paralelo: 
+## Requisitos
 
-Los clubes tienen villanos que han secuestrado a sus héroes históricos. 
-Tu misión es recorrer estadio por estadio, derrotarlos, liberar a los héroes y llegar hasta Gianni Infantino para destruir ese mundo ilogico.
+- JDK 21 (Eclipse Adoptium 21.0.13)
+- Visual Studio Code con *Extension Pack for Java*
+- Extensión *XSLT/XPath for Visual Studio Code* + Saxon-HE 13.1
+- Git
 
+> La ruta del proyecto no puede tener caracteres como `ª` (Saxon da *I/O error*).
 
+## Estructura
 
-# INDICACIONES: 
-1. Empiezas en Mestalla y eliges tu camino por 3 rondas nacionales de LaLiga (3 estadios por ronda).
-2. Cada estadio tiene un villano. Si lo derrotas, su héroe se une a tu equipo como aliado.
-3. Después de las rondas nacionales, empieza el nivel internacional con otros 3 estadios por ronda.
-4. Al final te espera Infantino en la sede de la FIFA.
+```
+EL DESPERATRA DEL HEROE/
+├── CODIGO/      Código Java (Juego.java tiene el main)
+│   ├── VILLANOS/
+│   └── INTERFACES/
+├── XML/         ranking.xml, ranking.dtd, ranking.xslt, ranking.css, ranking.html
+│                y copias de prueba (Error*.xml)
+├── README.md
+└── .gitignore
+```
 
+## Compilar y ejecutar
 
+En VS Code: abrir `CODIGO/Juego.java` y pulsar **Run**.
 
-# AUTOR
-ÓSCAR RODRIGO BRESO
+Desde la terminal, en la carpeta del proyecto:
 
+```
+javac -encoding UTF-8 -d bin -sourcepath CODIGO CODIGO/Juego.java
+java -cp bin Juego
+```
+
+`javac` convierte los `.java` en `.class` (bytecode) y `java` los ejecuta en la JVM.
+
+## Cómo se juega
+
+- Menú: 1 Nueva partida · 2 Ranking · 3 Normas · 4 Salir.
+- En combate: 1 Atacar · 2 Escudo · 3 Poción · 4 Poder de aliado · 5 Abandonar.
+- 100 puntos por enemigo derrotado. Si ganas la aventura, se suma la vida que te queda.
