@@ -300,7 +300,7 @@ public class Elecciones
         System.out.println("==================================");
         System.out.println("          LA SORPRESA");
         System.out.println("==================================");
-        System.out.println(" -- Estas a un paso de la sede de la FIFA. El cielo es de un rojo oscuro y nadie dice una palabra -- ");
+        System.out.println(" -- Estás a un paso de la sede de la FIFA. El cielo es de un rojo oscuro y nadie dice una palabra -- ");
         System.out.println(" -- Hace tiempo que tus aliados caminan en silencio. Desde las puertas de LaLiga, algo se ha roto entre vosotros -- ");
         sc.nextLine();
         System.out.println(" ");
@@ -308,57 +308,57 @@ public class Elecciones
         System.out.println("'"+nombre.toUpperCase()+"'" + ": Llevo noches sin dormir. Una voz me habla en sueños.");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println("'"+nombre.toUpperCase()+"'" + ": Es Infantino. Dice que nadie tiene por que sufrir, que nadie tiene por que morir.");
+        System.out.println("'"+nombre.toUpperCase()+"'" + ": Es Infantino. Dice que nadie tiene por qué sufrir, que nadie tiene por qué morir.");
         System.out.println("'"+nombre.toUpperCase()+"'" + ": Dice que en su mundo nadie envejece, nadie pierde y nadie es sacrificado.");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": ¡ES UNA TRAMPA!, Te esta mintiendo");
+        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": ¡ES UNA TRAMPA! Te está mintiendo.");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println("'"+nombre.toUpperCase()+"'" + ": ¿Mintiendo? Tu entregaste a dos de los nuestros para cruzar una puerta. Y no dudaste.");
-        System.out.println("'"+nombre.toUpperCase()+"'" + ": Yo tambien puedo ser el siguiente. No pienso esperar a que me elijas.");
+        System.out.println("'"+nombre.toUpperCase()+"'" + ": ¿Mintiendo? Tú entregaste a dos de los nuestros para cruzar una puerta. Y no dudaste.");
+        System.out.println("'"+nombre.toUpperCase()+"'" + ": Yo también puedo ser el siguiente. No pienso esperar a que me elijas.");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println("Los demas aliados retroceden. Nadie se atreve a respirar.");
-        System.out.println("'"+nombre.toUpperCase()+"'" + ": Lo siento de verdad. Pero Infantino me ha prometido la libertad. Aqui acaba vuestro viaje.");
+        System.out.println("Los demás aliados retroceden. Nadie se atreve a respirar.");
+        System.out.println("'"+nombre.toUpperCase()+"'" + ": Lo siento de verdad. Pero Infantino me ha prometido la libertad. Aquí acaba vuestro viaje.");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- "+ nombre + " desenvaina su arma y se lanza contra ti. Ya no es tu aliado. Te acab de traicinionar en el peor momento");
+        System.out.println(" -- "+ nombre + " desenvaina su arma y se lanza contra ti. Ya no es tu aliado. Te acaba de traicionar en el peor momento -- ");
         System.out.println("Pulsa ENTER para luchar...");
         sc.nextLine();
 
-        // Fase 1: 100 de vida
+        // Fase 1: 120 de vida
         if (!Combate.pelearFase(jugadorTOP, new VillanoTraidor(nombre, 120), sc)) {
             return false;
         }
 
         jugadorTOP.curarEntreFases(15);
         System.out.println(" ");
-        System.out.println(" -- " + nombre + " cae de rodillas, con la respiracion rota. Levanta la vista hacia ti -- ");
-        System.out.println("'"+nombre.toUpperCase()+"'" + ": ¿Por que? Yo simplemente queria... no tener miedo.");
+        System.out.println(" -- " + nombre + " cae de rodillas, con la respiración rota. Levanta la vista hacia ti -- ");
+        System.out.println("'"+nombre.toUpperCase()+"'" + ": ¿Por qué? Yo simplemente quería... no tener miedo.");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- Todo ha terminado... -- ");
         sc.nextLine();
         System.out.println(" -- Bueno, parece que todo ha terminado... -- ");
-        System.out.println(" -- Algo no va bien: " + nombre + " sonrie -- ");
+        System.out.println(" -- Algo no va bien: " + nombre + " sonríe -- ");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- Cuando bajais la guardia, " + nombre + " agarra una roca enorme y la lanza con sus ultimas fuerzas -- ");
+        System.out.println(" -- Cuando bajáis la guardia, " + nombre + " agarra una roca enorme y la lanza con sus últimas fuerzas -- ");
         String muerto = inv.quitarAliadoAlAzar(true).getNombre();
         System.out.println("'"+muerto.toUpperCase()+"'" + ": ¿Eh? ¡Cuidado, la...!");
         System.out.println(" -- La roca golpea a " + muerto + " y lo mata en el acto -- ");
         sc.nextLine();
-        System.out.println(" ");                                       // mayusuculas
+        System.out.println(" ");                                       // mayúsculas
         System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": ¡NOOOOOOOO! ¡HIJO DE PUT*****************!");
         sc.nextLine();
         System.out.println(" ");
         System.out.println("'"+nombre.toUpperCase()+"'" + " se levanta, riendo entre dientes. Sus ojos brillan con un resplandor que no es suyo.");
-        System.out.println("'"+nombre.toUpperCase()+"'" + ": Infantino tenia razon. Todos sois unos miserable, el me ha dado una seguna oportunidad, y...voy a acabar con todos vosotros.");
+        System.out.println("'"+nombre.toUpperCase()+"'" + ": Infantino tenía razón. Todos sois unos miserables. Él me ha dado una segunda oportunidad y... voy a acabar con todos vosotros.");
         sc.nextLine();
         
         System.out.println(" ");
-        System.out.println(" -- Su vida ha AUMENTADO. El combate CONTINUA -- ");
+        System.out.println(" -- Su vida ha AUMENTADO. El combate CONTINÚA -- ");
         sc.nextLine();
 
         // Fase 2: 200 de vida
@@ -395,22 +395,22 @@ public class Elecciones
         sc.nextLine();
 
         System.out.println(" ");
-        System.out.println("'INFANTINO': Empuñas tu arma, ¿verdad? No hace falta. Primero escuchame. Solo te pido esa oportunidad.");
+        System.out.println("'INFANTINO': Empuñas tu arma, ¿verdad? No hace falta. Primero escúchame. Solo te pido esa oportunidad.");
         sc.nextLine();
 
         System.out.println(" ");
-        System.out.println("'INFANTINO': ¿Sabes por que cree este mundo? Porque en el verdadero se estaba muriendo.");
-        System.out.println("'INFANTINO': Lesiones graves en cada put* partido, estrellas que se quedan calvos alos 25, y el put*simpo 'Futbol Champain'");
+        System.out.println("'INFANTINO': ¿Sabes por qué creé este mundo? Porque en el verdadero se estaba muriendo.");
+        System.out.println("'INFANTINO': Lesiones graves en cada put* partido, estrellas que se quedan calvas a los 25, y el put*simpo 'Fútbol Champain'.");
         sc.nextLine();
 
         System.out.println(" ");
-        System.out.println("'INFANTINO': Aqui nadie envejece. Nadie se lesiona de verdad. Nadie pierde un Mundial por un arbitro.");
-        System.out.println("'INFANTINO': Aqui sus heroes viven para siempre. Yo no los encerre: yo los SALVE.");
+        System.out.println("'INFANTINO': Aquí nadie envejece. Nadie se lesiona de verdad. Nadie pierde un Mundial por un árbitro.");
+        System.out.println("'INFANTINO': Aquí sus héroes viven para siempre. Yo no los encerré: yo los SALVÉ.");
         sc.nextLine();
 
         System.out.println(" ");
-        System.out.println("'INFANTINO': Los villanos solo eran el precio. Alguien tenia que cuidar este mundo, y lo hice con mis manos.");
-        System.out.println("'INFANTINO': Dime, " + jugadorTOP.getNombre() + ", ¿cuanto has perdido tu por llegar hasta aqui?");
+        System.out.println("'INFANTINO': Los villanos solo eran el precio. Alguien tenía que cuidar este mundo, y lo hice con mis manos.");
+        System.out.println("'INFANTINO': Dime, " + jugadorTOP.getNombre() + ", ¿cuánto has perdido tú por llegar hasta aquí?");
         sc.nextLine();
 
         System.out.println(" ");
@@ -418,31 +418,31 @@ public class Elecciones
         System.out.println(" -- Tragas saliva. Sus palabras suenan raras... casi... razonables -- ");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- Cierras los ojos y recuerdas las puertas a las intenacionales --");
-        System.out.println(" -- Recuerdas a Alehkshander Zeferhin, el silencio de tus aliados y las dos vidas que entregaste para llegar hasta aqui -- ");
+        System.out.println(" -- Cierras los ojos y recuerdas las puertas a las internacionales -- ");
+        System.out.println(" -- Recuerdas a Alehkshander Zeferhin, el silencio de tus aliados y las dos vidas que entregaste para llegar hasta aquí -- ");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- ¿Y si de verdad eso tiene sentido? ¿Y si todo el dolor sirvio para algo? ¿Y si puedes parar de luchar? -- ");
-        System.out.println(" -- Quizas, solo quizas, Infantino... ");
+        System.out.println(" -- ¿Y si de verdad eso tiene sentido? ¿Y si todo el dolor sirvió para algo? ¿Y si puedes parar de luchar? -- ");
+        System.out.println(" -- Quizás, solo quizás, Infantino... ");
         sc.nextLine();
-        System.out.print(" tiene razon --  ");
+        System.out.print(" tiene razón --  ");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println("'INFANTINO': Unete a mi. Juntos haremos que nadie vuelva a sufrir. Nadie mas tendra que sacrificar a nadie.");
-        System.out.println("'INFANTINO': Ven. Da un paso hacia mi.");
+        System.out.println("'INFANTINO': Únete a mí. Juntos haremos que nadie vuelva a sufrir. Nadie más tendrá que sacrificar a nadie.");
+        System.out.println("'INFANTINO': Ven. Da un paso hacia mí.");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- Das un paso. Luego otro. Tus aliados te miran sin poder creerlo.");
-        System.out.println(" -- Infantino sonrie y extiende la mano...");
+        System.out.println(" -- Infantino sonríe y extiende la mano...");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- ...pero entonces piensas en los que se quedaron atras. En cada nombre. En cada cara.");
-        System.out.println(" -- No. Ninguna justificacion vale la vida de los que han caido por ti.");
+        System.out.println(" -- ...pero entonces piensas en los que se quedaron atrás. En cada nombre. En cada cara.");
+        System.out.println(" -- No. Ninguna justificación vale la vida de los que han caído por ti.");
         sc.nextLine();
         System.out.println(" ");
         System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": Eso no se llama salvarlos. Eso se llama robarles la vida.");
         System.out.println(" -- Y sin darle tiempo a reaccionar, le lanzas el primer golpe.");
-        System.out.println("'INFANTINO': ¡MALDITO INGRATO! Si eso es lo que quieres... morireis todos.");
+        System.out.println("'INFANTINO': ¡MALDITO INGRATO! Si eso es lo que quieres... moriréis todos.");
         System.out.println(" -- Pulsa ENTER para luchar...");
         sc.nextLine();
 
@@ -462,11 +462,11 @@ public class Elecciones
         System.out.println(" -- Entonces, una risa grave y lenta empieza a retumbar entre las paredes...");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- Tragas saliba y notas como si una bola de fuego estubiera reorriendo tu garganta en estos precisos momentos -- ");
+        System.out.println(" -- Tragas saliva y notas como si una bola de fuego estuviera recorriendo tu garganta en estos precisos momentos -- ");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println("'INFANTINO': ¿De verdad creias que me podrias derrotar?");
-        System.out.println("'INFANTINO': Yo decido quien juega, quien gana y quien desaparece. Yo decido todo en este mundo que YO MISMO CREE.");
+        System.out.println("'INFANTINO': ¿De verdad creías que me podrías derrotar?");
+        System.out.println("'INFANTINO': Yo decido quién juega, quién gana y quién desaparece. Yo decido todo en este mundo que YO MISMO CREÉ.");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- Infantino se levanta. Su cuerpo crece, el suelo se agrieta y su sombra devora la sala entera -- ");
@@ -474,24 +474,24 @@ public class Elecciones
 
         Personaje caido = inv.quitarAliadoAlAzar(true);
         System.out.println(" ");
-        System.out.println("'"+caido.getNombre().toUpperCase()+"'" + ": ¡HOSTIA! ¡Se esta levantando otra vez!");
-        System.out.println("'"+caido.getNombre().toUpperCase()+"'" + ": VEN AQUI HIJO DE PUT*, TE VAMOS A HACER PICADILLO, CALVO CORRUP....");
+        System.out.println("'"+caido.getNombre().toUpperCase()+"'" + ": ¡HOSTIA! ¡Se está levantando otra vez!");
+        System.out.println("'"+caido.getNombre().toUpperCase()+"'" + ": VEN AQUÍ, HIJO DE PUT*, TE VAMOS A HACER PICADILLO, CALVO CORRUP....");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- Infantino lo aplasta de un solo golpe. " + caido.getNombre() + " ya no volvera a luchar. Lo acaba de matar... -- ");
-        System.out.println("'INFANTINO': Uno menos. Todavia me quedan ganas de jugar.");
+        System.out.println(" -- Infantino lo aplasta de un solo golpe. " + caido.getNombre() + " ya no volverá a luchar. Lo acaba de matar... -- ");
+        System.out.println("'INFANTINO': Uno menos. Todavía me quedan ganas de jugar.");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- No sabes muy bien que decir, pero si sabes que quieres hacerle a ese mamonazo -- ");
+        System.out.println(" -- No sabes muy bien qué decir, pero sí sabes qué quieres hacerle a ese mamonazo -- ");
         System.out.println(" -- Con las fuerzas que te faltan, vas corriendo a matarlo");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- Pero antes de avanzar tan solo unos 10 miseros metros, te frenas en seco  --");
+        System.out.println(" -- Pero antes de avanzar tan solo unos 10 miserables metros, te frenas en seco --");
 
         // FASE 2: 200 de vida, x1,5 de daño gracias a 2 villanos revividos
-        String[] villanos = {"Peter Lim", "Juan Roig", "Martin Presa", "Joselu Mato", "Angel Torres", "Fernando Llorente",
-            "Goran Dorovic", "Del Nido Jr", "Lopera", "Jesus Gil", "Laporta", "Florentino Perez", "Martin Palermo",
-            "Gonzalo Higuain", "Lewandowski", "Mbappe", "Van Persie", "Carlos Tevez", "Donnarumma", "Boateng", "Luis Suarez"};
+        String[] villanos = {"Peter Lim", "Juan Roig", "Martín Presa", "Joselu Mato", "Ángel Torres", "Fernando Llorente",
+            "Goran Dorovic", "Del Nido Jr", "Lopera", "Jesús Gil", "Laporta", "Florentino Pérez", "Martín Palermo",
+            "Gonzalo Higuaín", "Lewandowski", "Mbappé", "Van Persie", "Carlos Tevez", "Donnarumma", "Boateng", "Luis Suárez"};
         int a = random.nextInt(villanos.length);
         int b = random.nextInt(villanos.length);
         while (b == a) {
@@ -500,17 +500,17 @@ public class Elecciones
 
         System.out.println(" ");
         System.out.println(" -- Infantino alza los brazos y el aire se vuelve oscuro y pesado -- ");
-        System.out.println("Infantino: Levantaos, mis viejos siervos. Esta vez no habra PIEDAD -- ");
+        System.out.println("Infantino: Levantaos, mis viejos siervos. Esta vez no habrá PIEDAD -- ");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- De la nada, " + villanos[a] + " y " + villanos[b] + " vuelven a la vida, con los ojos en blanco, y se arrodillan ante su amo -- ");
-        System.out.println(" -- Infantino absorbe su poder. Sus golpes ahora pesan x1,5 mas -- ");
+        System.out.println(" -- Infantino absorbe su poder. Sus golpes ahora pesan x1,5 más -- ");
         System.out.println("'INFANTINO': Ahora comprendes lo que es el verdadero poder.");
         sc.nextLine();
 
         System.out.println(" ");
-        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + "Vamos..., NO ME JODAS...");
-        System.out.println(" -- Te quedas quieto del terror, tan quieto como si estubieras en un traje de fuerza --  ");
+        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": Vamos..., NO ME JODAS...");
+        System.out.println(" -- Te quedas quieto del terror, tan quieto como si estuvieras en un traje de fuerza --  ");
 
         if (!Combate.pelearFase(jugadorTOP, new VillanoInfantino(200, (int) (danoMin * 1.5), (int) (danoMax * 1.5)), sc)) {
             return false;
@@ -519,43 +519,43 @@ public class Elecciones
         jugadorTOP.curarEntreFases(15);
         System.out.println(" ");
         System.out.println(" ");
-        System.out.println(" -- ¡ESTA VEZ SI! ¡HAS DERROTADO A GIANNI INFANTINO! -- ");
+        System.out.println(" -- ¡ESTA VEZ SÍ! ¡HAS DERROTADO A GIANNI INFANTINO! -- ");
         System.out.println("Pulsa ENTER para continuar...");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + "No... no no no no no no no..., NO PUEDE SEEEEEER !");
+        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": No... no no no no no no no..., ¡NO PUEDE SEEEEEER!");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- Pero Infantino no cae. Se agarra a la pared, se incorpora despacio y te clava la mirada -- ");
-        System.out.println("'INFANTINO': Has cometido un error. Has hecho que me enfade");
+        System.out.println("'INFANTINO': Has cometido un error. Has hecho que me enfade.");
         sc.nextLine();
 
         Personaje caido2 = inv.quitarAliadoAlAzar(true);
         System.out.println(" ");
         System.out.println("'"+caido2.getNombre().toUpperCase()+"'" + ": No... no puede ser. ¡Si ya estaba en el suelo! ¡Corre, no te pares!");
-        System.out.println("'"+caido2.getNombre().toUpperCase()+"'" + " se pone delante de ti: 'Yo lo entretengo. Tu acaba con el. ¡Hazlo por todos!'");
+        System.out.println("'"+caido2.getNombre().toUpperCase()+"'" + " se pone delante de ti: 'Yo lo entretengo. Tú acaba con él. ¡Hazlo por todos!'");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- Esta vez no hay aviso. Infantino se mueve tan rapido que ni lo ves -- ");
+        System.out.println(" -- Esta vez no hay aviso. Infantino se mueve tan rápido que ni lo ves -- ");
         System.out.println(" -- Atraviesa a " + caido2.getNombre() + " sin esfuerzo, y el eco del golpe te deja sordo -- ");
         sc.nextLine();
         System.out.println(" ");
         System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": ¡NOOOOOOOOOOOOOOOOOOO!");
-        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": ¡ME CAGO EN TODA TU GENERACIÓN PAYO MI3RDAAAAAS! ¡TE VOY A MATAR CHACHOOOOO!");
-        System.out.println("'INFANTINO': ¿Estas seguro?, venga a tomar por c*lo...");
+        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": ¡ME CAGO EN TODA TU GENERACIÓN, PAYO MI3RDAAAAAS! ¡TE VOY A MATAR, CHACHOOOOO!");
+        System.out.println("'INFANTINO': ¿Estás seguro? Venga, a tomar por c*lo...");
         sc.nextLine();
 
-        // FASE 3: 250 de vida, x2 de daño. Aqui si da los premios del combate
+        // FASE 3: 250 de vida, x2 de daño. Aquí sí da los premios del combate
         System.out.println(" ");
         System.out.println(" -- El cielo se rompe. Infantino lo da TODO y su poder se desborda: su daño se duplica, x2 -- ");
-        System.out.println("'INFANTINO': ¡NO HAY NADIE POR ENCIMA DE MI! ¡ARRODILLATE ANTE MI!");
+        System.out.println("'INFANTINO': ¡NO HAY NADIE POR ENCIMA DE MÍ! ¡ARRODÍLLATE ANTE MÍ!");
         sc.nextLine();
 
         if (!Combate.pelearFase(jugadorTOP, new VillanoInfantino(250, danoMin * 2, danoMax * 2), sc)) {
             return false;
         }
 
-        // Ultimo combate: suma los 100 puntos y guarda la vida para la bonificacion final
+        // Último combate: suma los 100 puntos y guarda la vida para la bonificación final
         jugadorTOP.sumarPuntos();
 
         System.out.println(" ");
@@ -563,14 +563,14 @@ public class Elecciones
         System.out.println(" -- Infantino cae de rodillas. Su cuerpo tiembla y la corona de trofeos rueda por el suelo -- ");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println("'INFANTINO': No... no es posible... Yo lo cree todo... Yo soy el futbol...");
+        System.out.println("'INFANTINO': No... no es posible... Yo lo creé todo... Yo soy el fútbol...");
         sc.nextLine();
         System.out.println(" ");
-        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": No. El futbol es de la gente. Nunca fue tuyo.");
+        System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": No. El fútbol es de la gente. Nunca fue tuyo.");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- El suelo se rompe. Las paredes se deshacen como si fueran de papel -- ");
-        System.out.println(" -- Los estadios, los carteles y los trofeos empiezan a desaparecer. El mundo que Infantino creo se esta cayendo a pedazos -- ");
+        System.out.println(" -- Los estadios, los carteles y los trofeos empiezan a desaparecer. El mundo que Infantino creó se está cayendo a pedazos -- ");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- Entre la luz y el polvo, ves a tus aliados que siguen en pie: --");
@@ -579,15 +579,15 @@ public class Elecciones
         }
         sc.nextLine();
         System.out.println(" ");
-        System.out.println(" -- Pero no estan todos. Piensas en " + caido.getNombre() + " y en " + caido2.getNombre() + ", que no han podido ver este momento -- ");
-        System.out.println(" -- Y en cada nombre que se quedo atras para que tu llegaras hasta aqui -- ");
+        System.out.println(" -- Pero no están todos. Piensas en " + caido.getNombre() + " y en " + caido2.getNombre() + ", que no han podido ver este momento -- ");
+        System.out.println(" -- Y en cada nombre que se quedó atrás para que tú llegaras hasta aquí -- ");
         sc.nextLine();
         System.out.println(" ");
         System.out.println("'"+jugadorTOP.getNombre().toUpperCase()+"'" + ": Esto es por vosotros. Por todos.");
         sc.nextLine();
         System.out.println(" ");
         System.out.println(" -- Una luz blanca lo cubre todo -- ");
-        System.out.println(" -- Y cuando se apaga, estas de vuelta en el campo de Mestalla, con el cesped bajo los pies y la grada llena -- ");
+        System.out.println(" -- Y cuando se apaga, estás de vuelta en el campo de Mestalla, con el césped bajo los pies y la grada llena -- ");
         System.out.println(" -- Todo ha terminado. El mundo de Infantino ya no existe -- ");
         sc.nextLine();
 

@@ -1,19 +1,12 @@
 import java.io.File;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
-// Leer y escribir el XML
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
+// Solo para generar el HTML con el XSLT
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-
-// Gestionar el documento XML
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
 
 public class Ranking {
 
@@ -29,72 +22,82 @@ public class Ranking {
         return "XML/ranking.xml";
     }
 
-    // Carga el XML en los arrays. Devuelve cuántos jugadores ha cargado o -1 si hay un error
+    // Carga el XML en los arrays leyendo linea a linea. Devuelve cuantos jugadores ha cargado o -1 si hay un error
     public static int cargarRanking(String ruta, String[] nombres, int[] puntos) {
 
         File archivo = new File(ruta);
 
-        // Si todavía no existe, se empieza con el ranking vacío
         if (!archivo.exists()) {
             System.out.println("No existe " + ruta + ". Se empieza con el ranking vacío.");
             return 0;
         }
 
+        int cargados = 0;
+        int jugadores = 0;
+        String nombre = null;
+
         try {
-            DocumentBuilderFactory fabrica = DocumentBuilderFactory.newInstance();
+            Scanner lector = new Scanner(archivo, "UTF-8");
 
-            // Acepta el DOCTYPE pero no carga la DTD (la validación se hace aparte)
-            fabrica.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+            while (lector.hasNextLine()) {
+                String linea = lector.nextLine().trim();
 
-            DocumentBuilder constructor = fabrica.newDocumentBuilder();
-            Document documento = constructor.parse(archivo);
+                if (linea.startsWith("<nombre>")) {
+                    nombre = sacarTexto(linea);
 
-            NodeList lista = documento.getElementsByTagName("jugador");
+                } else if (linea.startsWith("<puntos>")) {
+                    jugadores++;
+                    String textoPuntos = sacarTexto(linea);
 
-            if (lista.getLength() > MAX_JUGADORES) {
-                System.out.println("Error: el ranking tiene más de " + MAX_JUGADORES + " jugadores.");
-                return -1;
+                    if (jugadores > MAX_JUGADORES) {
+                        System.out.println("Error: el ranking tiene más de " + MAX_JUGADORES + " jugadores.");
+                        lector.close();
+                        return -1;
+                    }
+                    if (nombre == null || nombre.isEmpty()) {
+                        System.out.println("Error: el jugador " + jugadores + " no tiene nombre.");
+                        lector.close();
+                        return -1;
+                    }
+                    if (!esNumeroValido(textoPuntos)) {
+                        System.out.println("Error: los puntos del jugador " + jugadores + " no son un número válido.");
+                        lector.close();
+                        return -1;
+                    }
+
+                    int pts = Integer.parseInt(textoPuntos);
+                    int posicion = buscarPuesto(puntos, cargados, pts);
+                    cargados = colocarJugador(nombres, puntos, cargados, posicion, nombre, pts);
+                    nombre = null;
+
+                } else if (linea.startsWith("</jugador>") && nombre != null) {
+                    // Ha cerrado el jugador sin pasar por <puntos>
+                    System.out.println("Error: al jugador " + (jugadores + 1) + " le faltan los puntos.");
+                    lector.close();
+                    return -1;
+                }
             }
 
-            int cargados = 0;
-
-            for (int i = 0; i < lista.getLength(); i++) {
-                Element jugador = (Element) lista.item(i);
-
-                NodeList nodoNombre = jugador.getElementsByTagName("nombre");
-                NodeList nodoPuntos = jugador.getElementsByTagName("puntos");
-
-                if (nodoNombre.getLength() == 0 || nodoPuntos.getLength() == 0) {
-                    System.out.println("Error: al jugador " + (i + 1) + " le falta el nombre o los puntos.");
-                    return -1;
-                }
-
-                String nombre = nodoNombre.item(0).getTextContent().trim();
-                String textoPuntos = nodoPuntos.item(0).getTextContent().trim();
-
-                if (nombre.isEmpty()) {
-                    System.out.println("Error: el jugador " + (i + 1) + " tiene el nombre vacío.");
-                    return -1;
-                }
-
-                if (!esNumeroValido(textoPuntos)) {
-                    System.out.println("Error: los puntos del jugador " + (i + 1) + " no son un número válido.");
-                    return -1;
-                }
-
-                int pts = Integer.parseInt(textoPuntos);
-
-                // Se coloca en su puesto, así da igual el orden en que venga en el XML
-                int posicion = buscarPuesto(puntos, cargados, pts);
-                cargados = colocarJugador(nombres, puntos, cargados, posicion, nombre, pts);
-            }
-
+            lector.close();
             return cargados;
 
         } catch (Exception e) {
             System.out.println("Error al leer " + ruta + ": " + e.getMessage());
             return -1;
         }
+    }
+
+    // De una linea como <nombre>Villa</nombre> saca lo que hay entre las etiquetas
+    public static String sacarTexto(String linea) {
+        int inicio = linea.indexOf(">") + 1;
+        int fin = linea.lastIndexOf("</");
+        String texto = linea.substring(inicio, fin).trim();
+        return texto.replace("&lt;", "<").replace("&gt;", ">").replace("&amp;", "&");
+    }
+
+    // Cambia los caracteres que XML no deja escribir tal cual
+    public static String escapar(String texto) {
+        return texto.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
     }
 
     // Comprueba que el texto sea un entero no negativo
@@ -161,46 +164,25 @@ public class Ranking {
         return colocarJugador(nombres, puntos, contador, posicion, nombre, pts);
     }
 
-    // Escribe los arrays en el XML. Devuelve true si se ha guardado bien
+    // Escribe los arrays en el XML linea a linea. Devuelve true si se ha guardado bien
     public static boolean guardarRanking(String ruta, String[] nombres, int[] puntos, int contador) {
 
         try {
-            DocumentBuilderFactory fabrica = DocumentBuilderFactory.newInstance();
-            DocumentBuilder constructor = fabrica.newDocumentBuilder();
-            Document documento = constructor.newDocument();
+            PrintWriter escritor = new PrintWriter(new File(ruta), "UTF-8");
 
-            Element raiz = documento.createElement("ranking");
-            documento.appendChild(raiz);
+            escritor.println("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>");
+            escritor.println("<!DOCTYPE ranking SYSTEM \"" + RUTA_DTD + "\">");
+            escritor.println("<ranking>");
 
             for (int i = 0; i < contador; i++) {
-                Element jugador = documento.createElement("jugador");
-                jugador.setAttribute("posicion", String.valueOf(i + 1));
-                raiz.appendChild(jugador);
-
-                // setTextContent escapa solo los caracteres como & y <
-                Element nombre = documento.createElement("nombre");
-                nombre.setTextContent(nombres[i]);
-                jugador.appendChild(nombre);
-
-                Element pts = documento.createElement("puntos");
-                pts.setTextContent(String.valueOf(puntos[i]));
-                jugador.appendChild(pts);
+                escritor.println("    <jugador posicion=\"" + (i + 1) + "\">");
+                escritor.println("        <nombre>" + escapar(nombres[i]) + "</nombre>");
+                escritor.println("        <puntos>" + puntos[i] + "</puntos>");
+                escritor.println("    </jugador>");
             }
 
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
-
-            // Vuelve a escribir el DOCTYPE para que el XML siga enlazado a la DTD
-            transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, RUTA_DTD);
-
-            DOMSource origen = new DOMSource(documento);
-            StreamResult destino = new StreamResult(new File(ruta));
-            transformer.transform(origen, destino);
-
+            escritor.println("</ranking>");
+            escritor.close();
             return true;
 
         } catch (Exception e) {
