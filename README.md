@@ -37,7 +37,7 @@ javac -encoding UTF-8 -d bin -sourcepath CODIGO CODIGO/Juego.java
 java -cp bin Juego
 ```
 
-`javac` convierte los `.java` en `.class` (bytecode) y `java` los ejecuta en la JVM.
+`javac` convierte los `.java` en `.class` y `java` los ejecuta.
 
 ## Cómo se juega
 
