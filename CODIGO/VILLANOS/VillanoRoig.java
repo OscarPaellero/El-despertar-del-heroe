@@ -9,7 +9,7 @@ public class VillanoRoig extends Personaje implements IntCombatiente, IntSanador
 
     public VillanoRoig()
     {
-        super("Juan Roig", 80,
+        super("Juan Roig", 100,
         new Arma("Ladrillo amarillo", "Te marea y no puedes atacar durante una ronda.", 10),
         new Poder("Muro", "+5 de vida a el mismo.", 10));
         setDanoAtaque(5, 15);

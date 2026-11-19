@@ -104,8 +104,9 @@ public static void main(String[] args)
                 System.out.println("Pulsa ENTER para comenzar la aventura");
                     sc.nextLine();
  
-                    // NIVEL 1: LALIGA
-                boolean villanoDerrotado = Elecciones.rondaInicial(sc, jugadorTOP);
+
+                // NIVEL 1: LALIGA
+                    boolean villanoDerrotado = Elecciones.rondaInicial(sc, jugadorTOP);
  
                     if (villanoDerrotado) {
                         villanoDerrotado = Elecciones.ronda1(sc, jugadorTOP);
@@ -119,9 +120,11 @@ public static void main(String[] args)
                     if (villanoDerrotado) {
                         villanoDerrotado = Elecciones.rondaFinalLaLiga(sc, jugadorTOP);
                     }
-                    // NIVEL 2: INTERNACIONALES
                     if (villanoDerrotado) {
                         System.out.println("Has superado las rondas nacionales...");
+                        
+
+                // NIVEL 2: INTERNACIONALES        
                         Elecciones.puertasDeLaLiga(sc, jugadorTOP);
                         villanoDerrotado = Elecciones.rondaInter1(sc, jugadorTOP);
                     }
@@ -131,6 +134,8 @@ public static void main(String[] args)
                     if (villanoDerrotado) {
                         villanoDerrotado = Elecciones.rondaInter3(sc, jugadorTOP);
                     }
+
+
                 // FINAL
                     if (villanoDerrotado) {
                         villanoDerrotado = Elecciones.rondaTraidor(sc, jugadorTOP);
@@ -150,7 +155,7 @@ public static void main(String[] args)
                         System.out.println("Puntuacion final: " + jugadorTOP.getPuntos());
                     }
 
-                    // Toda partida terminada (victoria, derrota o abandono) entra como candidata
+                // Toda partida terminada (victoria, derrota o abandono) entra como candidata
                     contadorRanking = Ranking.registrarPartida(nombresRanking, puntosRanking, contadorRanking,
                                                                jugadorTOP.getNombre(), jugadorTOP.getPuntos(), xmlCorrecto);
                 break;
@@ -162,24 +167,24 @@ public static void main(String[] args)
                 break;
  
             case 3:
-                System.out.println(" ");
+                 System.out.println(" ");
                 System.out.println(" ");
                 System.out.println(" ");
                 System.out.println("==================================");
                 System.out.println("         NORMAS DEL JUEGO         ");
                 System.out.println("==================================");
                 System.out.println(" ");
-                System.out.println("1. Comenzaras tu aventura en Mestalla, el historico estadio del Valencia CF, donde se iniciara tu mision.");
+                System.out.println("1. Comenzarás tu aventura en Mestalla, el histórico estadio del Valencia CF, donde se iniciará tu misión.");
                 System.out.println(" ");
-                System.out.println("2. Tendras que superar 3 rondas nacionales. En cada ronda encontraras 3 estadios de LaLiga y deberas elegir uno para continuar tu aventura.");
+                System.out.println("2. Tendrás que superar 3 rondas nacionales. En cada ronda encontrarás 3 estadios de LaLiga y deberás elegir uno para continuar tu aventura.");
                 System.out.println(" ");
-                System.out.println("3. En cada estadio te enfrentaras a un villano del club que habra secuestrado a uno de sus heroes historicos.");
+                System.out.println("3. En cada estadio te enfrentarás a un villano del club que habrá secuestrado a uno de sus héroes históricos.");
                 System.out.println(" ");
-                System.out.println("4. Si consigues derrotar al villano, liberaras al heroe y se unira a tu equipo como aliado para las siguientes batallas.");
+                System.out.println("4. Si consigues derrotar al villano, liberarás al héroe y se unirá a tu equipo como aliado para las siguientes batallas.");
                 System.out.println(" ");
-                System.out.println("5. Cuando superes las rondas nacionales, viajaras por los grandes estadios internacionales para enfrentarte a nuevos enemigos y conseguir aliados legendarios.");
+                System.out.println("5. Cuando superes las rondas nacionales, viajarás por los grandes estadios internacionales para enfrentarte a nuevos enemigos y conseguir aliados legendarios.");
                 System.out.println(" ");
-                System.out.println("6. Tu mision final sera enfrentarte a Infantino, para poder destruir este mundo que nunca deberia de haber sido creado.");
+                System.out.println("6. Tu misión final será enfrentarte a Infantino para poder destruir este mundo que nunca debería haber sido creado.");
                 System.out.println(" ");
                 System.out.println("==================================");
  
@@ -189,7 +194,7 @@ public static void main(String[] args)
                 break;
             
             default:
-                System.out.println("Opcion incorrecta. Elige del 1 al 4.");
+                System.out.println("Opción incorrecta. Elige del 1 al 4.");
                 break;
         }
     } while (opcion != 4);
@@ -199,7 +204,7 @@ public static void main(String[] args)
     public static int leerEntero(Scanner sc)
     {
         while (!sc.hasNextInt()) {
-            System.out.print("Eso no es un numero. Escribe un numero: ");
+            System.out.print("Eso no és un numero. Escribe un numero: ");
             sc.nextLine();
         }
         int numero = sc.nextInt();

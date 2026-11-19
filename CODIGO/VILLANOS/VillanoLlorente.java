@@ -9,7 +9,7 @@ public class VillanoLlorente extends Personaje implements IntCombatiente, IntInv
 
     public VillanoLlorente()
     {
-        super("Fernando Llorente", 90,
+        super("Fernando Llorente", 110,
         new Arma("Diente de leon", "Te apuñala quitandote 10 de vida.", 12),
         new Poder("Maman", "Sale una araña gigante que te quita 20 de vida.", 12));
         setDanoAtaque(6, 17);

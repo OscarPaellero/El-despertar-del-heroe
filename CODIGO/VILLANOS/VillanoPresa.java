@@ -10,7 +10,7 @@ public class VillanoPresa extends Personaje implements IntTirador, IntInvocador
 
     public VillanoPresa()
     {
-        super("Martin Presa", 80,
+        super("Martin Presa", 100,
         new Arma("Pelotas de golf", "Sus esbirros tiran enormes cantidades de estas pelotas.", 10),
         new Poder("Pelazo de señor", "Te tapa la vision con su pelo y no atacas durante 1 turno.", 10));
         setDanoAtaque(5, 15);

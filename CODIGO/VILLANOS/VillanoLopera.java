@@ -11,7 +11,7 @@ public class VillanoLopera extends Personaje implements IntSanador, IntHechicero
 
     public VillanoLopera()
     {
-        super("Lopera", 100,
+        super("Lopera", 120,
         new Arma("Maletin de la UVI", "Te pone excusas que te lian y te quita un arma aleatoria.", 15),
         new Poder("El busto de la Providencia", "Duplica su daño al grito de: yo os entregue un Betis libre.", 15));
         setDanoAtaque(8, 20);

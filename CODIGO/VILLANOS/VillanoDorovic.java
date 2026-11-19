@@ -5,11 +5,11 @@ import INTERFACES.IntTirador;
 
 public class VillanoDorovic extends Personaje implements IntCombatiente, IntTirador
 {
-    private int municion = 2;
+    private int municion = 3;
 
     public VillanoDorovic()
     {
-        super("Goran Dorovic", 90,
+        super("Goran Dorovic", 110,
         new Arma("Escudo rebotante", "Te hace el doble.", 12),
         new Poder("Doble identidad", "El proximo ataque te lo haces a ti mismo.", 12));
         setDanoAtaque(6, 17);

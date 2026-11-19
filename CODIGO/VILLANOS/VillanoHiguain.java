@@ -10,7 +10,7 @@ public class VillanoHiguain extends Personaje implements IntTirador, IntSanador
 
     public VillanoHiguain()
     {
-        super("Gonzalo Higuain", 130,
+        super("Gonzalo Higuain", 140,
         new Arma("Barba de señor", "Te tira pelos que te quitan 1 de vida cada uno, con un numero aleatorio entre 10 y 30.", 20),
         new Poder("Protector del astro", "Te quita una pocion y se la bebe el mismo.", 20));
         setDanoAtaque(15, 25);

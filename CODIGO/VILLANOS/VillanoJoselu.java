@@ -10,7 +10,7 @@ public class VillanoJoselu extends Personaje implements IntCombatiente, IntHechi
 
     public VillanoJoselu()
     {
-        super("Joselu Mato", 80,
+        super("Joselu Mato", 100,
         new Arma("Poste de porteria", "Hace un x2 en uno de sus ataques.", 10),
         new Poder("Descendimiento", "Te quita 5 de vida, de vez en cuando.", 10));
         setDanoAtaque(5, 15);

@@ -12,7 +12,7 @@ public class VillanoLaporta extends Personaje implements IntCombatiente, IntInvo
 
     public VillanoLaporta()
     {
-        super("Laporta", 110,
+        super("Laporta", 130,
         new Arma("Palanca cosmica", "Te mete un palancazo", 17),
         new Poder("Llamada de Negreira", "Llama a Negreira y te hace pupita", 17));
         setDanoAtaque(10, 20);
