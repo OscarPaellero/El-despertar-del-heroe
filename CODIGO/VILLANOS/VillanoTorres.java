@@ -27,7 +27,7 @@ public class VillanoTorres extends Personaje implements IntInvocador, IntHechice
     }
 
     @Override
-    public int NumeroInvocados()
+    public int numeroInvocados()
     {
         return this.invocados;
     }
@@ -72,7 +72,7 @@ public class VillanoTorres extends Personaje implements IntInvocador, IntHechice
     @Override
     public int turnoInvocador(int vidaJugador)
     {
-        int actuales = NumeroInvocados();
+        int actuales = numeroInvocados();
 
         if (actuales < getMaxInvocados() && (actuales == 0 || azar(100) < 50)) {
             invocar(getCriatura());

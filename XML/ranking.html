@@ -1,17 +1,53 @@
-CONSULTA 1 - Nombres de todos los jugadores
-XPath: /ranking/jugador/nombre
-  -    
-
-CONSULTA 2 - Jugadores con mas de 200 puntos
-XPath: /ranking/jugador[puntos > 200]/nombre
-
-CONSULTA 3 - Puntos de Jaap Stam
-XPath: /ranking/jugador[nombre = 'Jaap Stam']/puntos
-  - 
-
-CONSULTA 4 - Jugadores entre 100 y 300 puntos
-XPath: /ranking/jugador[puntos >= 100 and puntos <= 300]/nombre
-
-CONSULTA 5 - Numero de jugadores en el ranking
-XPath: count(/ranking/jugador)
-  - 1
+<html lang="es">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ranking</title>
+        <link rel="stylesheet" href="ranking.css">
+    </head>
+    <body>
+        <h1>El despertar del héroe</h1>
+        <h2>Clasificación de jugadores</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Puesto</th><th>Jugador</th><th>Puntos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="puesto">1</td><td>David Villa</td><td class="puntos">385</td>
+                </tr>
+                <tr>
+                    <td class="puesto">2</td><td>Zlatan Ibrahimovic</td><td class="puntos">342</td>
+                </tr>
+                <tr>
+                    <td class="puesto">3</td><td>Leo Messi</td><td class="puntos">200</td>
+                </tr>
+                <tr>
+                    <td class="puesto">4</td><td>Jaap Stam</td><td class="puntos">200</td>
+                </tr>
+                <tr>
+                    <td class="puesto">5</td><td>JUEGO</td><td class="puntos">200</td>
+                </tr>
+                <tr>
+                    <td class="puesto">6</td><td>OSCAR</td><td class="puntos">200</td>
+                </tr>
+                <tr>
+                    <td class="puesto">7</td><td>Cristiano Ronaldo</td><td class="puntos">100</td>
+                </tr>
+                <tr>
+                    <td class="puesto">8</td><td>OSCAR 2</td><td class="puntos">100</td>
+                </tr>
+                <tr>
+                    <td class="puesto">9</td><td>RANKING PRUEBA 2</td><td class="puntos">100</td>
+                </tr>
+                <tr>
+                    <td class="puesto">10</td><td>Peter Lim</td><td class="puntos">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="nota">Jugadores registrados: 10 (se muestran como máximo los 10 mejores)</p>
+    </body>
+</html>

@@ -30,7 +30,7 @@ public class ViajePersonaj
         presa.apuntar(100);
         presa.disparar(100);
         presa.invocar("esbirro con pelotas de golf");
-        System.out.println("Invocados: " + presa.NumeroInvocados());
+        System.out.println("Invocados: " + presa.numeroInvocados());
         presa.atacarConInvocados(100);
         System.out.println(" ");
 
@@ -48,7 +48,7 @@ public class ViajePersonaj
         VillanoTorres torres = new VillanoTorres();
         System.out.println("=== " + torres.getNombre() + " ===");
         torres.invocar("agente libre");
-        System.out.println("Invocados: " + torres.NumeroInvocados());
+        System.out.println("Invocados: " + torres.numeroInvocados());
         torres.atacarConInvocados(100);
         torres.prepararHechizo("Protesta");
         torres.lanzarHechizo(100);
@@ -62,7 +62,7 @@ public class ViajePersonaj
         System.out.println("Escudo levantado: " + llorente.escudoLevantado());
         System.out.println("Vida del escudo: " + llorente.getDefensa());
         llorente.invocar("araña gigante");
-        System.out.println("Invocados: " + llorente.NumeroInvocados());
+        System.out.println("Invocados: " + llorente.numeroInvocados());
         llorente.atacarConInvocados(100);
         System.out.println(" ");
 
@@ -114,7 +114,7 @@ public class ViajePersonaj
         gil.usarPocion();
         System.out.println("Pociones: " + gil.getPociones());
         gil.invocar("jacuzzi de verdad");
-        System.out.println("Invocados: " + gil.NumeroInvocados());
+        System.out.println("Invocados: " + gil.numeroInvocados());
         gil.atacarConInvocados(100);
         System.out.println(" ");
 
@@ -125,7 +125,7 @@ public class ViajePersonaj
         System.out.println("Escudo levantado: " + laporta.escudoLevantado());
         System.out.println("Vida del escudo: " + laporta.getDefensa());
         laporta.invocar("mensajero de Negreira");
-        System.out.println("Invocados: " + laporta.NumeroInvocados());
+        System.out.println("Invocados: " + laporta.numeroInvocados());
         laporta.atacarConInvocados(100);
         laporta.prepararHechizo("Llamada de Negreira");
         laporta.lanzarHechizo(100);
@@ -177,7 +177,7 @@ public class ViajePersonaj
         lewandowski.apuntar(100);
         lewandowski.disparar(100);
         lewandowski.invocar("aliado traicionero");
-        System.out.println("Invocados: " + lewandowski.NumeroInvocados());
+        System.out.println("Invocados: " + lewandowski.numeroInvocados());
         lewandowski.atacarConInvocados(100);
         System.out.println(" ");
 
@@ -234,7 +234,7 @@ public class ViajePersonaj
         boateng.usarPocion();
         System.out.println("Pociones: " + boateng.getPociones());
         boateng.invocar("hermano gemelo");
-        System.out.println("Invocados: " + boateng.NumeroInvocados());
+        System.out.println("Invocados: " + boateng.numeroInvocados());
         boateng.atacarConInvocados(100);
         System.out.println(" ");
 
@@ -266,7 +266,7 @@ public class ViajePersonaj
         infantino.usarPocion();
         System.out.println("Pociones: " + infantino.getPociones());
         infantino.invocar("guardia de la FIFA");
-        System.out.println("Invocados: " + infantino.NumeroInvocados());
+        System.out.println("Invocados: " + infantino.numeroInvocados());
         infantino.atacarConInvocados(100);
         infantino.prepararHechizo("Tres fases");
         infantino.lanzarHechizo(100);

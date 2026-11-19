@@ -4,6 +4,8 @@ Aventura textual por turnos en Java ambientada en el fútbol. El jugador combate
 
 ### Autor: Óscar Rodrigo Breso · Proyecto de la 1.ª evaluación.
 
+**Repositorio:** https://github.com/OscarPaellero/El-despertar-del-heroe
+
 ## Requisitos
 
 - JDK 21 (Eclipse Adoptium 21.0.13)

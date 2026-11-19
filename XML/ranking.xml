@@ -22,10 +22,22 @@
         <puntos>200</puntos>
     </jugador>
     <jugador posicion="6">
+        <nombre>OSCAR</nombre>
+        <puntos>200</puntos>
+    </jugador>
+    <jugador posicion="7">
         <nombre>Cristiano Ronaldo</nombre>
         <puntos>100</puntos>
     </jugador>
-    <jugador posicion="7">
+    <jugador posicion="8">
+        <nombre>OSCAR 2</nombre>
+        <puntos>100</puntos>
+    </jugador>
+    <jugador posicion="9">
+        <nombre>RANKING PRUEBA 2</nombre>
+        <puntos>100</puntos>
+    </jugador>
+    <jugador posicion="10">
         <nombre>Peter Lim</nombre>
         <puntos>0</puntos>
     </jugador>

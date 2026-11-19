@@ -6,7 +6,7 @@ public interface IntInvocador
     public void invocar(String criatura);
 
     // Cuenta las criaturas invocadas para no pasar el máximo y saber si puede atacar con ellas.
-    public int NumeroInvocados();
+    public int numeroInvocados();
 
     // El daño depende de cuántas hay: cada invocado pega la mitad, y con 0 no hace daño.
     public int atacarConInvocados(int jugadorTOP);
