@@ -44,3 +44,7 @@ java -cp bin Juego
 - Menú: 1 Nueva partida · 2 Ranking · 3 Normas · 4 Salir.
 - En combate: 1 Atacar · 2 Escudo · 3 Poción · 4 Poder de aliado · 5 Abandonar.
 - 100 puntos por enemigo derrotado. Si ganas la aventura, se suma la vida que te queda.
+
+### Enlace del juego
+
+https://github.com/OscarPaellero/El-despertar-del-heroe
